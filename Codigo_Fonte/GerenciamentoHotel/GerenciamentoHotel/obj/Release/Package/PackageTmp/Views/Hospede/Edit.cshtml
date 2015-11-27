@@ -1,0 +1,150 @@
+﻿@model GerenciamentoHotel.Models.HospedeModel
+
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/Shared/_LayoutNovo.cshtml";
+}
+
+<h2>Edição de Hóspede</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Hóspede</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.codigo)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.nome, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.nome, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.nome, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.endereco, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.endereco, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.endereco, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.documento_identificacao, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.documento_identificacao, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.documento_identificacao, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.tipo_documento_identificacao, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.tipo_documento_identificacao, new SelectList(ViewBag.tipoDocumento, "Value", "Text"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.tipo_documento_identificacao, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.data_nascimento, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.data_nascimento, "{0:dd/MM/yyyy}", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.nome_pai_mae, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.nome_pai_mae, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.nome_pai_mae, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-default" onclick="return validar();">
+                    <span class="fa fa-save"></span>Salvar
+                </button>
+                <a href="@Url.Action("Index", "Hospede")" title="Voltar"><span class="btn btn-default fa fa-arrow-left">Voltar</span></a>
+                <a href="@Url.Action("Index", "Home")" title="Voltar"><span class="btn btn-default fa fa-home">Ir para Home</span></a>
+            </div>
+        </div>
+        <br />
+    </div>
+}
+
+<script>
+
+    $(document).ready(function () {
+        $('#data_nascimento').mask('00/00/0000');
+    });
+
+    function validar() {
+        var retorno = true;
+        var nome = $('#nome').val();
+        var endereco = $('#endereco').val();
+        var email = $('#email').val();
+        var documento_identificacao = $('#documento_identificacao').val();
+        var tipo_documento_identificacao = $('#tipo_documento_identificacao').val();
+        var data_nascimento = $('#data_nascimento').val();
+        var nome_pai_mae = $('#nome_pai_mae').val();
+
+        if (nome == '') {
+            msgbox('Forneça um nome.');
+            return false;
+        }
+
+        if (endereco == '') {
+            msgbox('Forneça um endereço.');
+            return false;
+        }
+
+        if (email == '') {
+            msgbox('Forneça um email.');
+            return false;
+        }
+
+        if (documento_identificacao == '') {
+            msgbox('Forneça o documento de idenficação.');
+            return false;
+        }
+
+        if (tipo_documento_identificacao == '0') {
+            msgbox('Forneça o tipo do documento de idenficação.');
+            return false;
+        }
+
+        if (nome_pai_mae == '') {
+            msgbox('Forneça a filiação do hóspede.');
+            return false;
+        }
+
+        if (data_nascimento == '') {
+            msgbox('Forneça a data de nascimento.');
+            return false;
+        }
+
+        if (checkDate("data_nascimento") == false) {
+            return false;
+        }
+        
+        return retorno;
+    }
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

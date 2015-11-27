@@ -1,0 +1,66 @@
+﻿@model GerenciamentoHotel.Models.tb_acomodacao
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Acomodação</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.preco_diaria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.preco_diaria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numeracao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numeracao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.qtd_pessoas_adultas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.qtd_pessoas_adultas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.qtd_criancas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.qtd_criancas)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.codigo }) |
+    @Html.ActionLink("Voltar para Lista", "Index")
+</p>

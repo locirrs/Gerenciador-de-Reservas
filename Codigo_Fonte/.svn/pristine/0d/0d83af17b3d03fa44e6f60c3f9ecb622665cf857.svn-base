@@ -1,0 +1,156 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
+using System.Net;
+using System.Web;
+using System.Web.Mvc;
+using GerenciamentoHotel.Models;
+
+namespace GerenciamentoHotel.Controllers
+{
+    public class FuncionarioController : Controller
+    {
+        private gerenciamento_hotelEntities db = new gerenciamento_hotelEntities();
+
+        // GET: Funcionario
+        public ActionResult Index()
+        {
+            return View(db.tb_funcionario.ToList());
+        }
+
+        // GET: Funcionario/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tb_funcionario tb_funcionario = db.tb_funcionario.Find(id);
+            if (tb_funcionario == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tb_funcionario);
+        }
+
+        // GET: Funcionario/Create
+        public ActionResult Create()
+        {
+            var items = new List<SelectListItem>()
+                    {
+                        new SelectListItem {Text = "Selecione", Value = "0"},
+                        new SelectListItem {Text = "CPF", Value = "1"},
+                        new SelectListItem {Text = "RG", Value = "2"}
+                    };
+
+            var tipoUsuario = new List<SelectListItem>()
+                    {
+                        new SelectListItem {Text = "Selecione", Value = "0"},
+                        new SelectListItem {Text = "Administrador", Value = "1"},
+                        new SelectListItem {Text = "Funcionário", Value = "2"}
+                    };
+            ViewBag.tipoUsuario = tipoUsuario;
+            ViewBag.tipoDocumento = items;
+            return View();
+        }
+
+        // POST: Funcionario/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "codigo,nome,endereco,telefone,documento_identificacao,tipo_documento_identificacao,data_nascimento,tipo_usuario,senha")] tb_funcionario tb_funcionario)
+        {
+            if (ModelState.IsValid)
+            {
+                db.tb_funcionario.Add(tb_funcionario);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(tb_funcionario);
+        }
+
+        // GET: Funcionario/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tb_funcionario tb_funcionario = db.tb_funcionario.Find(id);
+            if (tb_funcionario == null)
+            {
+                return HttpNotFound();
+            }
+            var items = new List<SelectListItem>()
+                    {
+                        new SelectListItem {Text = "Selecione", Value = "0"},
+                        new SelectListItem {Text = "CPF", Value = "1"},
+                        new SelectListItem {Text = "RG", Value = "2"}
+                    };
+            var tipoUsuario = new List<SelectListItem>()
+                    {
+                        new SelectListItem {Text = "Selecione", Value = "0"},
+                        new SelectListItem {Text = "Administrador", Value = "1"},
+                        new SelectListItem {Text = "Funcionário", Value = "2"}
+                    };
+            ViewBag.tipoUsuario = tipoUsuario;
+            ViewBag.tipoDocumento = items;
+            return View(tb_funcionario);
+        }
+
+        // POST: Funcionario/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "codigo,nome,endereco,telefone,documento_identificacao,tipo_documento_identificacao,data_nascimento,tipo_usuario,senha")] tb_funcionario tb_funcionario)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(tb_funcionario).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(tb_funcionario);
+        }
+
+        // GET: Funcionario/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tb_funcionario tb_funcionario = db.tb_funcionario.Find(id);
+            if (tb_funcionario == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tb_funcionario);
+        }
+
+        // POST: Funcionario/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            tb_funcionario tb_funcionario = db.tb_funcionario.Find(id);
+            db.tb_funcionario.Remove(tb_funcionario);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+    }
+}

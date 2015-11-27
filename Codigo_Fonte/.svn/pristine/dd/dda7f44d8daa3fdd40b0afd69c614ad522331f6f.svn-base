@@ -1,0 +1,73 @@
+﻿@model GerenciamentoHotel.Models.tb_consumo
+
+@{
+    ViewBag.Title = "Deletar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Deletar</h2>
+
+<h3>Você tem certeza que deseja excluir este Consumo?</h3>
+<div>
+    <h4>tb_consumo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.data_consumo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_consumo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.quantidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valor_unitario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valor_unitario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valor_final)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valor_final)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_checkin.hora_entrada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_checkin.hora_entrada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_itens_consumo.descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_itens_consumo.descricao)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar para Lista", "Index")
+        </div>
+    }
+</div>

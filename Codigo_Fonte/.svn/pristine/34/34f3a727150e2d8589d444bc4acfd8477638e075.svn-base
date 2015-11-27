@@ -1,0 +1,64 @@
+﻿@model IEnumerable<GerenciamentoHotel.Models.tb_reserva>
+
+@{
+    ViewBag.Title = "Reservas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Reservas</h2>
+
+<p>
+    @Html.ActionLink("Criar nova reserva", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.data_entrada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_saida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.qtd_adultos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.qtd_criancas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_acomodacao.descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_hospede.nome)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.data_entrada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.data_saida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.qtd_adultos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.qtd_criancas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_acomodacao.descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_hospede.nome)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.codigo }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.codigo }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.codigo })
+        </td>
+    </tr>
+}
+
+</table>

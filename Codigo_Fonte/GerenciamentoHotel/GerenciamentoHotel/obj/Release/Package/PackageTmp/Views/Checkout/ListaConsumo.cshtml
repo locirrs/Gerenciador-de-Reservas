@@ -1,0 +1,72 @@
+﻿@model GerenciamentoHotel.Models.ListaConsumo
+
+@{
+    ViewBag.Title = "ListaConsumo";
+    Layout = "~/Views/Shared/_LayoutReport.cshtml";
+    decimal totalConsumo = 0M;
+}
+
+<p class="text-center">
+    <span style="font-size: 4em;">Check-Out</span>
+</p>
+<br /><br /><br /><br />
+<div class="row">
+    <div class="col-md-4"><strong>Hóspede:</strong>@Model.nomeHospede</div>
+    <div class="col-md-4"><strong>Apartamento:</strong>@Model.apartamento</div>
+    <div class="col-md-4"><strong>Entrada:</strong>@String.Format("{0:dd/MM/yyyy}", Model.dataEntrada)</div>
+</div>
+<br /><br /><br /><br />
+<div class="row">
+    <div class="col-md-4"><strong>Data de Saída:</strong> @String.Format("{0:dd/MM/yyyy}", Model.dataSaida)</div>
+    <div class="col-md-4"><strong>Hora de Saída:</strong> @Model.horaSaida</div>
+    <div class="col-md-4"><strong>Telefonemas (R$):</strong> @Model.telefonemas.ToString("n2")</div>
+</div>
+
+<div class="row">
+    <div class="col-md-4"><strong>Diária(R$):</strong> @Model.diaria.ToString("n2")</div>
+    <div class="col-md-4"><strong>Número Diárias:</strong> @Model.numDiarias</div>
+    <div class="col-md-4"><strong>Total Diárias (R$):</strong> @Model.totalDiarias.ToString("n2")</div>
+</div>
+
+<div class="row"></div>
+<br/><br /><br /><br />
+<table class="table table-hover table-striped table-bordered">
+    <thead>
+        <tr>
+            <th style="width:40%;">Item</th>
+            <th style="width:10%">Qtde</th>
+            <th style="width:25%">Valor Unitário</th>
+            <th style="width:25%">Valor Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.consumo)
+        {
+            <tr>
+                <td>@item.tb_itens_consumo.descricao</td>
+                <td>@item.quantidade</td>
+                <td>@string.Format("{0:n2}",item.valor_unitario)</td>
+                <td>@string.Format("{0:n2}", item.valor_final)</td>
+            </tr>
+            totalConsumo += (decimal)item.valor_final;
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">Total de Consumo</th>
+            <th>@string.Format("{0:n2}",totalConsumo)</th>
+        </tr>
+    </tfoot>
+
+</table>
+
+<br /><br /><br /><br />
+
+<div class="row">
+    <div class="col-md-3">
+        <h3>Total Hospedagem:</h3>
+    </div>
+    <div class="col-md-9 pull-right">
+        <h3>@string.Format("{0:n2}",Model.totalHospedagem)</h3>
+    </div>
+</div>

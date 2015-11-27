@@ -1,0 +1,137 @@
+﻿@model GerenciamentoHotel.Models.tb_acomodacao
+
+@{
+    ViewBag.Title = "Criar Acomodação";
+    Layout = "~/Views/Shared/_LayoutNovo.cshtml";
+}
+
+<h2>Criar Acomodação</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Acomodação</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.descricao, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.descricao, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.descricao, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.tipo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.tipo, new SelectList(ViewBag.tipo, "Value", "Text"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.tipo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.preco_diaria, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.preco_diaria, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.preco_diaria, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.numeracao, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.numeracao, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.numeracao, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.qtd_pessoas_adultas, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.qtd_pessoas_adultas, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.qtd_pessoas_adultas, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.qtd_criancas, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.qtd_criancas, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.qtd_criancas, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-default" onclick="return validar();">
+                    <span class="fa fa-save"></span>Salvar
+                </button>
+                <a href="@Url.Action("Index", "Acomodacao")" title="Voltar"><span class="btn btn-default fa fa-arrow-left">Voltar</span></a>
+                <a href="@Url.Action("Index", "Home")" title="Voltar"><span class="btn btn-default fa fa-home">Ir para Home</span></a>
+            </div>            
+        </div>
+        <br/>
+    </div>
+}
+
+<script>
+
+    $(document).ready(function () {
+        $('#preco_diaria').mask('000.000.000.000.000,00', { reverse: true });
+    });
+
+    function testar() {
+        $('#conteudoMensagem').html("Forneça uma descrição para a acomodação.");
+        $('#alertModal').modal('show');
+    }
+
+    function validar() {
+        var retorno = true;
+        var descricao = $('#descricao').val();
+        var tipo = $('#tipo').val();
+        var preco_diaria = $('#preco_diaria').val();
+        var numeracao = $('#numeracao').val();
+        var qtd_pessoas_adultas = $('#qtd_pessoas_adultas').val();
+        var qtd_criancas = $('#qtd_criancas').val();
+
+        if (descricao == '') {
+            msgbox("Forneça uma descrição para a acomodação");
+            return false;
+        }
+
+        if (tipo == '0') {
+            msgbox('Forneça o tipo para a acomodação.');
+            return false;
+        }
+
+        if (preco_diaria == '') {
+            msgbox('Forneça o preço da diária para a acomodação.');
+            return false;
+        }
+
+        if (numeracao == '') {
+            msgbox('Forneça o número a acomodação.');
+            return false;
+        }
+
+        if (qtd_pessoas_adultas == '') {
+            msgbox('Forneça quantidade de pessoas adultas para a acomodação.');
+            return false;
+        }
+
+        if (qtd_criancas == '') {
+            msgbox('Forneça quantidade de pessoas adultas para a acomodação.');
+            return false;
+        }
+
+        return retorno;
+    }
+</script>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

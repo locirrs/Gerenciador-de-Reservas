@@ -1,0 +1,87 @@
+﻿@model GerenciamentoHotel.Models.tb_funcionario
+
+@{
+    ViewBag.Title = "Deletar Funcionário";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Deletar Funcionário</h2>
+
+<h3>Você quer realmente excluir este funcionario?</h3>
+<div>
+    <h4>Funcionário</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.endereco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.endereco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.documento_identificacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.documento_identificacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo_documento_identificacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_documento_identificacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_nascimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_nascimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.senha)
+        </dt>
+
+
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Deletar" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar para Lista", "Index")
+        </div>
+    }
+</div>

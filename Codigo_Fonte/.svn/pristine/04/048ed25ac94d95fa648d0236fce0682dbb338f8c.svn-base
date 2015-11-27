@@ -1,0 +1,63 @@
+﻿@model IEnumerable<GerenciamentoHotel.Models.tb_consumo>
+
+@{
+    ViewBag.Title = "Listar Consumo";
+}
+
+<h2>Listar Consumo</h2>
+
+<p>
+    @Html.ActionLink("Criar Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.data_consumo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quantidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.valor_unitario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.valor_final)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_checkin.hora_entrada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_itens_consumo.descricao)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.data_consumo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.valor_unitario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.valor_final)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_checkin.hora_entrada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_itens_consumo.descricao)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.codigo }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.codigo }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.codigo })
+        </td>
+    </tr>
+}
+
+</table>

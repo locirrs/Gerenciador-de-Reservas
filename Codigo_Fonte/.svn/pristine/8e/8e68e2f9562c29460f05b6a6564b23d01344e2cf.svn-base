@@ -1,0 +1,69 @@
+﻿@model IEnumerable<GerenciamentoHotel.Models.tb_hospede>
+
+@{
+    ViewBag.Title = "Gerenciamento de Hóspede";
+}
+
+<h2>Gerenciamento de Hóspede</h2>
+
+<p>
+    @Html.ActionLink("Criar Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.endereco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.documento_identificacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipo_documento_identificacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_nascimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nome_pai_mae)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.endereco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.documento_identificacao)
+        </td>
+        <td>
+            @if (item.tipo_documento_identificacao.Value == 1) { @Html.Label("CPF", new { @style="font-weight:normal"}); } else { @Html.Label("RG", new { @style="font-weight:normal"}); }
+        </td>
+        <td>
+            @item.data_nascimento.Value.ToString("dd/MM/yyyy")
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nome_pai_mae)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.codigo }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.codigo }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.codigo })
+        </td>
+    </tr>
+}
+
+</table>

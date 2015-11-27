@@ -1,0 +1,81 @@
+﻿@model IEnumerable<GerenciamentoHotel.Models.tb_acomodacao>
+
+@{
+    ViewBag.Title = "Lista de Acomodação";
+    Layout = "~/Views/Shared/_LayoutNovo.cshtml";
+}
+
+<h2>Acomodação</h2>
+
+<p>
+    <a href="@Url.Action("Create", "Acomodacao")" title="Editar"><span class="btn btn-default fa fa-plus-circle">Nova Acomodação</span></a>
+    <a href="@Url.Action("Index", "Home")" title="Voltar"><span class="btn btn-default fa fa-home">Ir para Home</span></a>
+</p>
+<br/>
+@if (Model.ToList().Count > 0)
+{
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.descricao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.tipo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.preco_diaria)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.numeracao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.qtd_pessoas_adultas)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.qtd_criancas)
+                </th>
+                <th style="width:10%;"></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.descricao)
+                    </td>
+                    <td>
+                        @if (item.tipo.Value == 1)
+                        { @Html.Label("Luxo", new { @style = "font-weight:normal" });
+                        }
+                        else
+                        { @Html.Label("Simples", new { @style = "font-weight:normal" });
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.preco_diaria)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.numeracao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.qtd_pessoas_adultas)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.qtd_criancas)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Acomodacao", new { id = item.codigo })" title="Editar"><i class="fa fa-pencil-square-o"></i></a>
+                        <a href="@Url.Action("Details", "Acomodacao", new { id = item.codigo })" title="Detalhes"><i class="fa fa-ellipsis-h"></i></a>
+                        <a href="@Url.Action("Delete", "Acomodacao", new { id = item.codigo })" title="Excluir"><i class="fa fa-eraser"></i></a>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+}
+else
+{
+    <div class="alert alert-info"><strong>Aviso:</strong>Nenhuma acomodação encontrada!</div>
+}

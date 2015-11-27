@@ -1,0 +1,592 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\PUBLISH\GerenciamentoHotel</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>04/28/2015 20:49:02</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>04/28/2015 20:49:10</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>04/28/2015 20:49:10</publishTime>
+    </File>
+    <File Include="bin/GerenciamentoHotel.dll">
+      <publishTime>11/27/2015 11:32:40</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>04/28/2015 20:49:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>04/28/2015 20:49:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>04/28/2015 20:49:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>04/28/2015 20:49:15</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>04/28/2015 20:49:15</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>04/28/2015 20:49:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>04/28/2015 20:49:15</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Facebook.dll">
+      <publishTime>04/28/2015 20:49:15</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Google.dll">
+      <publishTime>04/28/2015 20:49:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.MicrosoftAccount.dll">
+      <publishTime>04/28/2015 20:49:17</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>04/28/2015 20:49:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Twitter.dll">
+      <publishTime>04/28/2015 20:49:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ReportViewer.WebForms.DLL">
+      <publishTime>05/21/2015 15:20:36</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>04/28/2015 20:49:01</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.Entity.EF6.dll">
+      <publishTime>10/02/2015 16:05:30</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>04/28/2015 20:49:06</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>04/28/2015 20:49:14</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>04/28/2015 20:49:00</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>04/28/2015 20:49:01</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>04/28/2015 20:49:00</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>04/28/2015 20:48:59</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>04/28/2015 20:49:00</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>04/28/2015 20:49:00</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>04/28/2015 20:49:00</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>04/28/2015 20:49:03</publishTime>
+    </File>
+    <File Include="Checkout.xsc">
+      <publishTime>06/02/2015 10:30:20</publishTime>
+    </File>
+    <File Include="Checkout.xss">
+      <publishTime>06/02/2015 10:30:20</publishTime>
+    </File>
+    <File Include="ClassDiagram1.cd">
+      <publishTime>11/09/2015 14:15:09</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>04/28/2015 20:48:53</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>04/28/2015 20:48:53</publishTime>
+    </File>
+    <File Include="Content/jquery-ui.min.css">
+      <publishTime>05/15/2015 12:37:02</publishTime>
+    </File>
+    <File Include="Content/plugin/css/animate.css">
+      <publishTime>03/14/2014 05:57:42</publishTime>
+    </File>
+    <File Include="Content/plugin/css/bootstrap.min.css">
+      <publishTime>02/25/2014 19:08:20</publishTime>
+    </File>
+    <File Include="Content/plugin/css/easy-responsive-tabs.css">
+      <publishTime>04/16/2014 06:53:44</publishTime>
+    </File>
+    <File Include="Content/plugin/css/font-awesome.css">
+      <publishTime>02/06/2014 07:49:20</publishTime>
+    </File>
+    <File Include="Content/plugin/css/font-awesome.min.css">
+      <publishTime>02/06/2014 07:49:20</publishTime>
+    </File>
+    <File Include="Content/plugin/css/templatemo_misc.css">
+      <publishTime>03/28/2014 20:34:04</publishTime>
+    </File>
+    <File Include="Content/plugin/css/templatemo_style.css">
+      <publishTime>11/11/2015 08:55:23</publishTime>
+    </File>
+    <File Include="Content/plugin/fonts/fontawesome-webfont.eot">
+      <publishTime>02/06/2014 07:49:18</publishTime>
+    </File>
+    <File Include="Content/plugin/fonts/fontawesome-webfont.svg">
+      <publishTime>02/06/2014 07:49:18</publishTime>
+    </File>
+    <File Include="Content/plugin/fonts/fontawesome-webfont.ttf">
+      <publishTime>02/06/2014 07:49:18</publishTime>
+    </File>
+    <File Include="Content/plugin/fonts/fontawesome-webfont.woff">
+      <publishTime>02/06/2014 07:49:18</publishTime>
+    </File>
+    <File Include="Content/plugin/fonts/FontAwesome.otf">
+      <publishTime>02/06/2014 07:49:18</publishTime>
+    </File>
+    <File Include="Content/plugin/images/bx_loader.gif">
+      <publishTime>03/13/2014 19:55:12</publishTime>
+    </File>
+    <File Include="Content/plugin/images/close.png">
+      <publishTime>03/14/2014 22:21:24</publishTime>
+    </File>
+    <File Include="Content/plugin/images/loading.gif">
+      <publishTime>11/09/2013 03:26:00</publishTime>
+    </File>
+    <File Include="Content/plugin/images/next.png">
+      <publishTime>03/14/2014 22:21:32</publishTime>
+    </File>
+    <File Include="Content/plugin/images/portfolio/templatemo_portfolio01.jpg">
+      <publishTime>04/09/2014 00:56:32</publishTime>
+    </File>
+    <File Include="Content/plugin/images/portfolio/templatemo_portfolio02.jpg">
+      <publishTime>04/09/2014 00:53:44</publishTime>
+    </File>
+    <File Include="Content/plugin/images/portfolio/templatemo_portfolio03.jpg">
+      <publishTime>04/09/2014 00:57:14</publishTime>
+    </File>
+    <File Include="Content/plugin/images/portfolio/templatemo_portfolio04.jpg">
+      <publishTime>04/09/2014 00:52:38</publishTime>
+    </File>
+    <File Include="Content/plugin/images/portfolio/templatemo_portfolio05.jpg">
+      <publishTime>04/09/2014 00:55:04</publishTime>
+    </File>
+    <File Include="Content/plugin/images/portfolio/templatemo_portfolio06.jpg">
+      <publishTime>04/09/2014 00:54:26</publishTime>
+    </File>
+    <File Include="Content/plugin/images/portfolio/templatemo_portfolio07.jpg">
+      <publishTime>04/09/2014 00:55:34</publishTime>
+    </File>
+    <File Include="Content/plugin/images/portfolio/templatemo_portfolio08.jpg">
+      <publishTime>04/09/2014 00:58:46</publishTime>
+    </File>
+    <File Include="Content/plugin/images/portfolio/templatemo_portfolio09.jpg">
+      <publishTime>04/09/2014 00:59:50</publishTime>
+    </File>
+    <File Include="Content/plugin/images/previous.png">
+      <publishTime>03/14/2014 22:21:30</publishTime>
+    </File>
+    <File Include="Content/plugin/images/templatemo_about.jpg">
+      <publishTime>04/09/2014 01:06:38</publishTime>
+    </File>
+    <File Include="Content/plugin/images/templatemo_arrow.png">
+      <publishTime>03/31/2014 22:41:18</publishTime>
+    </File>
+    <File Include="Content/plugin/images/templatemo_arrow_gap.png">
+      <publishTime>03/31/2014 22:41:28</publishTime>
+    </File>
+    <File Include="Content/plugin/images/templatemo_contact1.jpg">
+      <publishTime>04/09/2014 01:11:10</publishTime>
+    </File>
+    <File Include="Content/plugin/images/templatemo_home1.jpg">
+      <publishTime>04/09/2014 01:18:10</publishTime>
+    </File>
+    <File Include="Content/plugin/images/templatemo_home2.jpg">
+      <publishTime>04/09/2014 00:44:18</publishTime>
+    </File>
+    <File Include="Content/plugin/images/templatemo_home3.jpg">
+      <publishTime>04/09/2014 01:33:00</publishTime>
+    </File>
+    <File Include="Content/plugin/images/templatemo_home4.jpg">
+      <publishTime>04/08/2014 23:12:00</publishTime>
+    </File>
+    <File Include="Content/plugin/images/templatemo_service1.jpg">
+      <publishTime>04/09/2014 00:51:12</publishTime>
+    </File>
+    <File Include="Content/plugin/images/templatemo_service2.jpg">
+      <publishTime>04/09/2014 00:49:18</publishTime>
+    </File>
+    <File Include="Content/plugin/images/templatemo_servicebg.jpg">
+      <publishTime>03/26/2014 18:02:18</publishTime>
+    </File>
+    <File Include="Content/plugin/images/templatemo_team.jpg">
+      <publishTime>04/09/2014 01:07:30</publishTime>
+    </File>
+    <File Include="Content/plugin/images/templatemo_testimonial1.jpg">
+      <publishTime>04/09/2014 01:16:36</publishTime>
+    </File>
+    <File Include="Content/plugin/images/templatemo_testimonial2.jpg">
+      <publishTime>04/09/2014 01:16:04</publishTime>
+    </File>
+    <File Include="Content/plugin/images/templatemo_testimonial3.jpg">
+      <publishTime>04/09/2014 01:14:36</publishTime>
+    </File>
+    <File Include="Content/plugin/images/templatemo_testi_arrow.png">
+      <publishTime>04/08/2014 01:49:50</publishTime>
+    </File>
+    <File Include="Content/plugin/images/templatemo_vision.jpg">
+      <publishTime>04/09/2014 01:13:42</publishTime>
+    </File>
+    <File Include="Content/plugin/js/app.js">
+      <publishTime>11/16/2015 12:58:17</publishTime>
+    </File>
+    <File Include="Content/plugin/js/bootstrap.min.js">
+      <publishTime>11/13/2015 15:14:54</publishTime>
+    </File>
+    <File Include="Content/plugin/js/easyResponsiveTabs.js">
+      <publishTime>04/08/2014 01:22:56</publishTime>
+    </File>
+    <File Include="Content/plugin/js/jquery-1.10.2.min.js">
+      <publishTime>03/13/2014 18:07:06</publishTime>
+    </File>
+    <File Include="Content/plugin/js/jquery.lightbox.js">
+      <publishTime>03/14/2014 22:22:04</publishTime>
+    </File>
+    <File Include="Content/plugin/js/jquery.mask.min.js">
+      <publishTime>11/05/2015 15:23:06</publishTime>
+    </File>
+    <File Include="Content/plugin/js/templatemo_custom.js">
+      <publishTime>11/13/2015 16:01:11</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>11/04/2015 09:55:04</publishTime>
+    </File>
+    <File Include="ControllerDiagram.cd">
+      <publishTime>11/09/2015 14:15:36</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>04/28/2015 20:48:51</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>04/28/2015 20:48:53</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>04/28/2015 20:48:53</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>04/28/2015 20:48:53</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>04/28/2015 20:48:52</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>04/28/2015 20:48:51</publishTime>
+    </File>
+    <File Include="ListaConsumo.xsc">
+      <publishTime>06/02/2015 10:39:53</publishTime>
+    </File>
+    <File Include="ListaConsumo.xss">
+      <publishTime>06/02/2015 10:39:53</publishTime>
+    </File>
+    <File Include="ListaHospede.xsc">
+      <publishTime>11/11/2015 13:41:55</publishTime>
+    </File>
+    <File Include="ListaHospede.xss">
+      <publishTime>11/11/2015 13:41:55</publishTime>
+    </File>
+    <File Include="ListaHospedePage.aspx">
+      <publishTime>05/21/2015 15:17:27</publishTime>
+    </File>
+    <File Include="Models/Modelo.edmx.diagram">
+      <publishTime>11/12/2015 14:43:38</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>05/21/2015 15:20:38</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>04/28/2015 20:48:52</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>04/28/2015 20:48:52</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>04/28/2015 20:48:54</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>04/28/2015 20:48:53</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>04/28/2015 20:48:53</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui.js">
+      <publishTime>05/15/2015 12:37:02</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>04/28/2015 20:49:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>04/28/2015 20:49:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>04/28/2015 20:49:04</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>04/28/2015 20:49:04</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>04/28/2015 20:49:02</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>04/28/2015 20:49:03</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>04/28/2015 20:49:03</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>11/13/2015 15:18:01</publishTime>
+    </File>
+    <File Include="Views/Account/ConfirmEmail.cshtml">
+      <publishTime>04/28/2015 23:49:08</publishTime>
+    </File>
+    <File Include="Views/Account/ExternalLoginConfirmation.cshtml">
+      <publishTime>04/28/2015 23:49:08</publishTime>
+    </File>
+    <File Include="Views/Account/ExternalLoginFailure.cshtml">
+      <publishTime>04/28/2015 23:49:08</publishTime>
+    </File>
+    <File Include="Views/Account/ForgotPassword.cshtml">
+      <publishTime>04/28/2015 23:49:08</publishTime>
+    </File>
+    <File Include="Views/Account/ForgotPasswordConfirmation.cshtml">
+      <publishTime>04/28/2015 23:49:08</publishTime>
+    </File>
+    <File Include="Views/Account/Login.cshtml">
+      <publishTime>11/13/2015 15:27:56</publishTime>
+    </File>
+    <File Include="Views/Account/Register.cshtml">
+      <publishTime>04/28/2015 23:49:08</publishTime>
+    </File>
+    <File Include="Views/Account/ResetPassword.cshtml">
+      <publishTime>04/28/2015 23:49:08</publishTime>
+    </File>
+    <File Include="Views/Account/ResetPasswordConfirmation.cshtml">
+      <publishTime>04/28/2015 23:49:08</publishTime>
+    </File>
+    <File Include="Views/Account/SendCode.cshtml">
+      <publishTime>04/28/2015 23:49:08</publishTime>
+    </File>
+    <File Include="Views/Account/VerifyCode.cshtml">
+      <publishTime>04/28/2015 23:49:08</publishTime>
+    </File>
+    <File Include="Views/Account/_ExternalLoginsListPartial.cshtml">
+      <publishTime>06/02/2015 19:42:06</publishTime>
+    </File>
+    <File Include="Views/Acomodacao/Create.cshtml">
+      <publishTime>11/13/2015 16:03:18</publishTime>
+    </File>
+    <File Include="Views/Acomodacao/Delete.cshtml">
+      <publishTime>11/13/2015 16:03:25</publishTime>
+    </File>
+    <File Include="Views/Acomodacao/Details.cshtml">
+      <publishTime>11/13/2015 16:03:32</publishTime>
+    </File>
+    <File Include="Views/Acomodacao/Edit.cshtml">
+      <publishTime>11/13/2015 16:03:40</publishTime>
+    </File>
+    <File Include="Views/Acomodacao/Index.cshtml">
+      <publishTime>11/26/2015 09:53:24</publishTime>
+    </File>
+    <File Include="Views/Checkin/Create.cshtml">
+      <publishTime>11/25/2015 12:57:20</publishTime>
+    </File>
+    <File Include="Views/Checkin/Delete.cshtml">
+      <publishTime>11/24/2015 08:52:43</publishTime>
+    </File>
+    <File Include="Views/Checkin/Details.cshtml">
+      <publishTime>11/13/2015 16:05:21</publishTime>
+    </File>
+    <File Include="Views/Checkin/Edit.cshtml">
+      <publishTime>11/19/2015 13:42:37</publishTime>
+    </File>
+    <File Include="Views/Checkin/Index.cshtml">
+      <publishTime>11/26/2015 09:53:39</publishTime>
+    </File>
+    <File Include="Views/Checkin/ListaHospede.cshtml">
+      <publishTime>11/12/2015 16:06:04</publishTime>
+    </File>
+    <File Include="Views/Checkout/Create.cshtml">
+      <publishTime>11/16/2015 13:43:29</publishTime>
+    </File>
+    <File Include="Views/Checkout/Delete.cshtml">
+      <publishTime>11/13/2015 16:08:19</publishTime>
+    </File>
+    <File Include="Views/Checkout/Details.cshtml">
+      <publishTime>11/13/2015 16:08:19</publishTime>
+    </File>
+    <File Include="Views/Checkout/Edit.cshtml">
+      <publishTime>11/19/2015 13:45:55</publishTime>
+    </File>
+    <File Include="Views/Checkout/Index.cshtml">
+      <publishTime>11/26/2015 09:53:56</publishTime>
+    </File>
+    <File Include="Views/Checkout/ListaConsumo.cshtml">
+      <publishTime>11/13/2015 14:40:17</publishTime>
+    </File>
+    <File Include="Views/Consumo/Create.cshtml">
+      <publishTime>11/26/2015 16:58:23</publishTime>
+    </File>
+    <File Include="Views/Consumo/Delete.cshtml">
+      <publishTime>11/13/2015 16:09:31</publishTime>
+    </File>
+    <File Include="Views/Consumo/Details.cshtml">
+      <publishTime>11/13/2015 16:10:03</publishTime>
+    </File>
+    <File Include="Views/Consumo/Edit.cshtml">
+      <publishTime>11/13/2015 16:10:03</publishTime>
+    </File>
+    <File Include="Views/Consumo/Index.cshtml">
+      <publishTime>11/26/2015 09:54:08</publishTime>
+    </File>
+    <File Include="Views/Funcionario/Create.cshtml">
+      <publishTime>11/26/2015 09:59:50</publishTime>
+    </File>
+    <File Include="Views/Funcionario/Delete.cshtml">
+      <publishTime>11/16/2015 09:22:02</publishTime>
+    </File>
+    <File Include="Views/Funcionario/Details.cshtml">
+      <publishTime>11/16/2015 09:21:57</publishTime>
+    </File>
+    <File Include="Views/Funcionario/Edit.cshtml">
+      <publishTime>11/26/2015 10:00:10</publishTime>
+    </File>
+    <File Include="Views/Funcionario/Index.cshtml">
+      <publishTime>11/26/2015 09:54:24</publishTime>
+    </File>
+    <File Include="Views/Home/About.cshtml">
+      <publishTime>04/28/2015 23:48:50</publishTime>
+    </File>
+    <File Include="Views/Home/Contact.cshtml">
+      <publishTime>04/28/2015 23:48:50</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>11/04/2015 10:42:42</publishTime>
+    </File>
+    <File Include="Views/Hospede/Create.cshtml">
+      <publishTime>11/27/2015 08:05:05</publishTime>
+    </File>
+    <File Include="Views/Hospede/Delete.cshtml">
+      <publishTime>11/16/2015 09:23:11</publishTime>
+    </File>
+    <File Include="Views/Hospede/Details.cshtml">
+      <publishTime>11/16/2015 09:22:51</publishTime>
+    </File>
+    <File Include="Views/Hospede/Edit.cshtml">
+      <publishTime>11/27/2015 08:05:12</publishTime>
+    </File>
+    <File Include="Views/Hospede/Index.cshtml">
+      <publishTime>11/26/2015 09:54:40</publishTime>
+    </File>
+    <File Include="Views/HospedeCheckin/Create.cshtml">
+      <publishTime>11/06/2015 17:38:26</publishTime>
+    </File>
+    <File Include="Views/HospedeCheckin/Delete.cshtml">
+      <publishTime>11/06/2015 17:39:48</publishTime>
+    </File>
+    <File Include="Views/HospedeCheckin/Details.cshtml">
+      <publishTime>11/06/2015 17:44:20</publishTime>
+    </File>
+    <File Include="Views/HospedeCheckin/Edit.cshtml">
+      <publishTime>11/06/2015 17:49:30</publishTime>
+    </File>
+    <File Include="Views/HospedeCheckin/Index.cshtml">
+      <publishTime>11/06/2015 17:37:42</publishTime>
+    </File>
+    <File Include="Views/ItensConsumo/Create.cshtml">
+      <publishTime>11/13/2015 16:11:45</publishTime>
+    </File>
+    <File Include="Views/ItensConsumo/Delete.cshtml">
+      <publishTime>11/13/2015 16:11:45</publishTime>
+    </File>
+    <File Include="Views/ItensConsumo/Details.cshtml">
+      <publishTime>11/13/2015 16:11:45</publishTime>
+    </File>
+    <File Include="Views/ItensConsumo/Edit.cshtml">
+      <publishTime>11/13/2015 16:11:45</publishTime>
+    </File>
+    <File Include="Views/ItensConsumo/Index.cshtml">
+      <publishTime>11/26/2015 09:54:53</publishTime>
+    </File>
+    <File Include="Views/Manage/AddPhoneNumber.cshtml">
+      <publishTime>04/28/2015 23:49:08</publishTime>
+    </File>
+    <File Include="Views/Manage/ChangePassword.cshtml">
+      <publishTime>04/28/2015 23:49:08</publishTime>
+    </File>
+    <File Include="Views/Manage/Index.cshtml">
+      <publishTime>04/28/2015 23:49:08</publishTime>
+    </File>
+    <File Include="Views/Manage/ManageLogins.cshtml">
+      <publishTime>04/28/2015 23:49:08</publishTime>
+    </File>
+    <File Include="Views/Manage/SetPassword.cshtml">
+      <publishTime>04/28/2015 23:49:08</publishTime>
+    </File>
+    <File Include="Views/Manage/VerifyPhoneNumber.cshtml">
+      <publishTime>04/28/2015 23:49:08</publishTime>
+    </File>
+    <File Include="Views/Reserva/Create.cshtml">
+      <publishTime>11/25/2015 13:21:20</publishTime>
+    </File>
+    <File Include="Views/Reserva/Delete.cshtml">
+      <publishTime>11/13/2015 16:12:21</publishTime>
+    </File>
+    <File Include="Views/Reserva/Details.cshtml">
+      <publishTime>11/13/2015 16:12:21</publishTime>
+    </File>
+    <File Include="Views/Reserva/Edit.cshtml">
+      <publishTime>11/19/2015 13:21:46</publishTime>
+    </File>
+    <File Include="Views/Reserva/Index.cshtml">
+      <publishTime>11/26/2015 09:55:06</publishTime>
+    </File>
+    <File Include="Views/Reserva/ListaReserva.cshtml">
+      <publishTime>11/16/2015 14:06:24</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>04/28/2015 23:49:06</publishTime>
+    </File>
+    <File Include="Views/Shared/Lockout.cshtml">
+      <publishTime>04/28/2015 23:49:08</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>10/30/2015 11:08:24</publishTime>
+    </File>
+    <File Include="Views/Shared/_LayoutLogin.cshtml">
+      <publishTime>11/13/2015 15:25:48</publishTime>
+    </File>
+    <File Include="Views/Shared/_LayoutNovo.cshtml">
+      <publishTime>11/19/2015 12:02:31</publishTime>
+    </File>
+    <File Include="Views/Shared/_LayoutReport.cshtml">
+      <publishTime>11/11/2015 14:39:46</publishTime>
+    </File>
+    <File Include="Views/Shared/_LoginPartial.cshtml">
+      <publishTime>06/02/2015 19:43:12</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>11/06/2015 13:37:26</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>06/02/2015 19:32:54</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/27/2015 11:32:41</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

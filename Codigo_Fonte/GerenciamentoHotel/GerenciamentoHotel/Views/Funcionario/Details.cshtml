@@ -1,0 +1,106 @@
+﻿@model GerenciamentoHotel.Models.tb_funcionario
+
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Views/Shared/_LayoutNovo.cshtml";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Detalhes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.endereco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.endereco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.documento_identificacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.documento_identificacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo_documento_identificacao)
+        </dt>
+
+        <dd>
+            @switch (Model.tipo_documento_identificacao)
+            {
+                case 0:
+                    <span>Nenhum</span>
+                    break;
+                case 1:
+                <span>CPF</span>
+                    break;
+                case 2:
+                <span>RG</span>
+                    break;
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_nascimento)
+        </dt>
+
+        <dd>
+            @string.Format("{0:dd/MM/yyyy}",Model.data_nascimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo_usuario)
+        </dt>
+
+        <dd>
+            @switch (Model.tipo_usuario)
+            {
+                case 0:
+                    <span>Nenhum</span>
+                    break;
+                case 1:
+                <span>Administrador</span>
+                    break;
+                case 2:
+                <span>Funcionário</span>
+                    break;
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.senha)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="@Url.Action("Edit", "Funcionario", new { id = Model.codigo })" title="Editar"><span class="btn btn-default fa fa-pencil">Editar</span></a>&nbsp;
+    <a href="@Url.Action("Index", "Funcionario")" title="Voltar"><span class="btn btn-default fa fa-arrow-left">Voltar</span></a>
+    <a href="@Url.Action("Index", "Home")" title="Voltar"><span class="btn btn-default fa fa-home">Ir para Home</span></a>
+</p>

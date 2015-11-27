@@ -1,0 +1,59 @@
+egue em anexo um modelo feito no excel que ira servir de layout para inicio do projeto, a tabela obviamente é manual, com um menu colorido ao lado, sendo que tenho que copiar o formulário (célula do menu) e colar no período a ser usado dentro da tabela na data correspondente, colorindo todo o período conforme a cor correspondente no menu...isso tudo temos que implementar com formulários automaticos dentro do padrão VMC    ,sendo que alguns requisitos serão:
+
+Título do Trabalho (provisório)
+(SGH Beta)
+ 
+ 
+Motivação
+Fazer um sistema de gerenciamento das estadias de hóspedes do hotel onde trabalho, com controles de reserva das acomodações, acompanhando todo histórico durante o período da estadia, controlando os todos os tipos de consumo feitos pelos hóspedes, tais como frigobar, restaurante, estacionamento, lavanderia e telefonemas. O hotel possui 23 suítes de luxo, 02 apartamentos para solteiro tipo standard, distribuídos em dois andares do hotel. O sistema deve permitir a emissão de relatórios de ocupação (governança, camareiras,  café da manhã e reservas), também com consultas possibilitando uma melhor administração das acomodações oferecidas.
+ 
+Descrição do problema
+Trabalho em um hotel de pequeno porte praticamente com administração familiar (Capão Praia Hotel), sem um sistema informatizado com muita demanda na alta temporada e rotatividade de hospedagens durante a baixa temporada. Tendo um quadro de funcionários reduzidos e com multitarefas necessitando de um sistema simples e prático, que torne ágil as tarefas diárias de hospedagem.
+ 
+Objetivos Gerais
+Informatizar a parte administrativa da empresa, hotel onde trabalho, focando inicialmente no cadastro dos clientes, reservas, check-in e check-out.
+ 
+Objetivos Específicos
+ 
+Requisitos Funcionais
+RF 1 - O sistema possibilitará a inclusão, alteração, visualização e remoção de hóspedes do hotel, contendo os seguintes atributos: nome, endereço, telefone, e-mail, documento de identificação (RG ou CPF para brasileiros e passaporte para estrangeiros), data de nascimento e nome do pai ou da mãe. [ALTA RELEVÂNCIA]
+RF 2 - O sistema deve criar e guardar um histórico com todas as preferências do hóspede, durante sua estadia. [RELEVANTE]
+RF 3 - O sistema deve possibilitar acesso por usuário. [RELEVANTE]
+RF 4 - O sistema deve possibilitar o cadastro de novos tipos de usuário, apenas pelo gerente. [RELEVANTE]
+RF 5 - O sistema deve possibilitar a realização de reservas para os hóspedes. [ALTA RELEVÂNCIA]
+RF 6 - O sistema deve possibilitar a visualização dos períodos disponíveis para reserva, sinalizando os já reservados e pagos e os ainda em aberto, pendente de pagamento. [ALTA RELEVÂNCIA]
+RF 7 - O sistema deve ter a rotina de check-In do hóspede. [ALTA RELEVÂNCIA]
+RF 8 - O sistema deve ter a rotina de check-Out do hóspede. [ALTA RELEVÂNCIA]
+RF 9 - O sistema deve permitir a inclusão, alteração, visualização e exclusão de itens de consumo, nas categorias: frigobar, restaurante, lavanderia e estacionamento com os seguintes atributos: código do item, descrição e valor. [ALTA RELEVÂNCIA]
+RF10 - O sistema deve permitir cadastro de funcionários do hotel: inclusão, alteração, visualização e remoção, com os seguintes atributos: documento de identificação, nome, endereço, telefone e data de nascimento. [ALTA RELEVÂNCIA]
+RF 11 - O sistema deve permitir cadastro: a inclusão, alteração, visualização e remoção dos tipos de acomodação do hotel, contendo os seguintes atributos: código da acomodação, descrição, tipo, quantidade total, preço da diária, número de pessoas adultas e número de crianças que esse tipo de acomodação comporta. [ALTA RELEVÂNCIA]
+RF 12 - O sistema deve permitir a entrada de hóspedes no hotel (check-in) com os seguintes atributos: data e hora de chegada do hóspede, data e hora prevista para saída do hóspede, identificação do hóspede principal (cadastrado), número do apartamento utilizado, nomes e idades dos acompanhantes, valor da diária, funcionário responsável pelo recebimento do hóspede (check-in) e desconto concedido (opcional). Se tiver sido feita a reserva prévia da acomodação, então, durante a entrada do hóspede, informa-se o nome e o sistema recupera automaticamente os dados da reserva, que podem ser alterados, se necessário. [ALTA RELEVÂNCIA]
+RF 13 - O sistema deve permitir a inclusão, alteração e remoção de consumo do hóspede. Durante a estadia no hotel, diariamente um funcionário do hotel faz a coleta de informações no frigobar para informar ao sistema os itens consumidos. Além disso, pedidos feitos ao restaurante e serviços requisitados à lavanderia são instantaneamente comunicados ao sistema. Cada consumo do hóspede possui os seguintes atributos: data do consumo, nome do funcionário responsável, número da acomodação, código dos itens consumidos, quantidades consumidas e valor unitário. [RELEVANTE]
+RF 14 - O sistema deve permitir o processamento da saída de hóspede do hotel (check-out), com os seguintes atributos: número do apartamento utilizado, data e hora de saída do hóspede, número de diárias cobradas, valor de cada diária, valor dos gastos com telefonemas e desconto concedido. Totalizando automaticamente os gastos de consumo do hóspede, que foram previamente inseridos na conta, mostrando os subtotais por categoria (frigobar, restaurante e lavanderia). O sistema deve também apresentar na tela o total a pagar, que é a soma das diárias, acrescentando-se os consumos e os telefonemas e subtraindo-se o desconto, se houver. [RELEVANTE]
+RF 15 - O sistema deve permitir as seguintes opções de pagamento da estadia no hotel:
+1) à vista (em dinheiro, cheque ou cartão de crédito);
+2) faturado em 15 dias agências; [RELEVANTE]
+RF 16 - O sistema deve permitir a impressão de um comprovante de saída do hóspede, contendo o nome do hóspede, documento, datas e horários de entrada e saída, número total de diárias, valor total das diárias, valor total do consumo do hóspede, valor total dos telefonemas, valor do desconto e total apagar. Nesse mesmo comprovante deve ser mostrada uma lista com os produtos consumidos, contendo a data do consumo, descrição do item de consumo, quantidade consumida, preço unitário e preço total. Ainda nesse comprovante deve constar a forma de pagamento e deve ser reservado um espaço para assinatura do hóspede na quitação. [RELEVANTE]
+RNF 17 - O sistema deve permitir a impressão de uma listagem dos hóspedes que estão no hotel no momento, contendo o nome do hóspede principal, nome dos acompanhantes, data de entrada, data prevista para saída e número da acomodação. O sistema deve permitir a impressão de uma listagem das reservas efetuadas para a data atual, contendo o nome do hóspede principal, telefone para contato, tipo de acomodação e data prevista para saída. [RELEVANTE]
+ 
+Requisitos não funcionais.
+ 
+RNF  1 - O sistema deve ter uma interface de interação com o usuário. [ALTA RELEVÂNCIA]
+RNF  2 - O sistema deve ter uma boa usabilidade. [RELEVANTE]
+RNF 3 - O sistema deve ter um banco de dados desenvolvido no SGBD MySql. [ALTA RELEVÂNCIA]
+RNF 4 - O sistema deve ser desenvolvido em C#. [ALTA RELEVÂNCIA]
+RNF 5 - O sistema deve possuir senhas de acesso e identificação para diferentes tipos de usuários: administrador do sistema e funcionários do hotel;
+ 
+ 
+Ferramentas que vai utilizar
+ 
+A aplicação será web por ser mais robusta utilizarei a framework ASP.NET MVC, através do Visual Studio em linguagem C Sharp e banco de dados Mysql. A escolha se deve a disciplina Orientadas a Objetos 2 cursadas no último semestre com o professor Cássio, no qual aprendi a forma de desenvolver por  MVC - Model-View-Controller - que é uma arquitetura que divide uma aplicação em três partes: 1) o Model, responsável pela manutenção do estado dos dados (por exemplo, armazenando os dados em um banco de dados); 2) o View, responsável pela interface com o usuário (não deve possuir nenhuma lógica de aplicação e nem de acesso a dados); 3) o Controller, que controla a lógica da aplicação, manipulando os dados do Model e escolhendo o View a ser utilizado.
+Essa arquitetura me permite a clara separação dos papéis de cada componente, o que facilita a execução de testes unitários na aplicação, entre outros benefícios.
+
+cadastro cliente(hospedes)
+cadastro de funcionarios
+cadastro de quartos
+cadastro de hotel
+controle de reserva
+cadastro de feriados
+cadastro de pagamentos

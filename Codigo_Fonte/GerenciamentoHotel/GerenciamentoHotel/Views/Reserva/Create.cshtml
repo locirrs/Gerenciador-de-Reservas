@@ -1,0 +1,237 @@
+﻿@model GerenciamentoHotel.Models.ReservaModel
+
+@{
+    ViewBag.Title = "Criar Nova Reserva";
+    Layout = "~/Views/Shared/_LayoutNovo.cshtml";
+}
+
+<h2>Criar Nova Reserva</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Reserva</h4>
+        <hr />
+
+        @if (ViewBag.UserFail != null)
+        {
+            <script type="text/javascript">
+        @{
+            if (TempData["erro"] != null)
+            {
+                <text>
+                    msgbox("Acomodação já está alugada para esta data!");
+                </text>
+            }
+
+
+        }
+
+
+            </script>
+        }
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.codigo_hospede, "Hóspede", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("codigo_hospede", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.codigo_hospede, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.data_entrada, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.data_entrada, "{0:dd/MM/yyyy}", new { @class = "form-control", placeholder = "Formato Dia/Mês/Ano (dd/MM/aaaa)", onblur="carregaAcomodacaoDisponivel();" })
+                @*@Html.ValidationMessageFor(model => model.data_entrada, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.data_saida, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.data_saida, "{0:dd/MM/yyyy}", new { @class = "form-control", placeholder = "Formato Dia/Mês/Ano (dd/MM/aaaa)" })
+                @*@Html.ValidationMessageFor(model => model.data_saida, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.codigo_acomodacao, "Acomodação", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("codigo_acomodacao", null, htmlAttributes: new { @class = "form-control", onchange="obterAcomodacao();" })
+                @Html.ValidationMessageFor(model => model.codigo_acomodacao, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.qtd_adultos, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.qtd_adultos, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.qtd_adultos, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.qtd_criancas, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.qtd_criancas, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.qtd_criancas, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-default" onclick="return validar();">
+                    <span class="fa fa-save"></span>Salvar
+                </button>
+                <a href="@Url.Action("Index", "Reserva")" title="Voltar"><span class="btn btn-default fa fa-arrow-left">Voltar</span></a>
+                <a href="@Url.Action("Index", "Home")" title="Voltar"><span class="btn btn-default fa fa-home">Ir para Home</span></a>
+            </div>
+        </div>
+        <br />
+    </div>
+}
+
+<script>
+
+    $(document).ready(function () {
+        $('#data_entrada').mask('00/00/0000');
+        $('#data_saida').mask('00/00/0000');
+        $('#codigo_acomodacao').empty();
+        $('#codigo_acomodacao').append("<option value='0'>Selecione a data de Entrada para Acomodações Disponíveis</option>");
+    });
+
+    function validar() {
+        var retorno = true;
+        var codigo_hospede = $('#codigo_hospede').val();
+        var data_entrada = $('#data_entrada').val();
+        var data_saida = $('#data_saida').val();
+        var codigo_acomodacao = $('#codigo_acomodacao').val();
+        var qtd_adultos = $('#qtd_adultos').val();
+        var qtd_criancas = $('#qtd_criancas').val();
+
+        if (codigo_hospede == null) {
+            msgbox('Escolha um hóspede.');
+            return false;
+        }
+
+        if (data_entrada == '') {
+            msgbox('Forneça a data de entrada.');
+            return false;
+        }
+
+        if (checkDate("data_entrada") == false) {
+            return false;
+        }
+
+        if (data_saida == '') {
+            msgbox('Forneça a data de saída.');
+            return false;
+        }
+
+        if (checkDate("data_saida") == false) {
+            return false;
+        }
+
+        if (codigo_acomodacao == '') {
+            msgbox('Forneça a acomodação.');
+            return false;
+        }
+
+        if (qtd_adultos == '') {
+            msgbox('Forneça quantidade de pessoas adultas para a reserva.');
+            return false;
+        }
+
+        if (qtd_criancas == '') {
+            msgbox('Forneça quantidade de crianças para a reserva.');
+            return false;
+        }
+
+        return retorno;
+    }
+
+
+    function carregaAcomodacaoDisponivel() {
+        var url = "Acomodacao/Disponibilidade";
+        var data_entrada = $("#data_entrada").val();
+
+        if (data_entrada==""){
+            return;
+        }
+
+        if (checkDate("data_entrada") == false) {
+            return false;
+        }
+
+        var _url = ((url.toLowerCase().indexOf('https://') != -1) ? '' : (url.indexOf("/") == 0) ? '' : GLOBAL.location) + url;
+
+        $.ajax({
+            url: _url,
+            type: "GET",
+            data: { data_entrada: data_entrada },
+            success: function (d) {
+                if (d == "{}") {
+                    msgbox('Nenhuma acomodacao disponível para data fornecida.');
+                } else {
+                    $('#codigo_acomodacao').empty();
+                    var obj = JSON.parse(d);
+                    if (obj.length > 0) {
+                        var options = "<option value='0'>Selecione Acomodação Disponível</option>";
+                        for (i = 0; i < obj.length; i++) {
+                            options += "<option value='" + obj[i].codigo + "'>" + obj[i].nome + "</option>";
+                        }
+                    } else {
+                        var options = "<option value='0'>Nenhuma Acomodação Disponível</option>";
+                    }
+                    $('#codigo_acomodacao').append(options);
+                }
+            },
+            error: function (d) {
+                if (d.statusText === 'abort') {
+                    return;
+                }
+                //settings.error && settings.error.call(this, d);
+            }
+        });
+    }
+
+    function obterAcomodacao() {
+        var url = "Acomodacao/GetAcomodacao";
+        var _url = ((url.toLowerCase().indexOf('https://') != -1) ? '' : (url.indexOf("/") == 0) ? '' : GLOBAL.location) + url;
+        var codigo_acomodacao = $('#codigo_acomodacao').val();
+        if (codigo_acomodacao == "0") {
+            $('#qtd_adultos').val("");
+            $('#qtd_criancas').val("");
+        } else {
+            $.ajax({
+                url: _url,
+                type: "GET",
+                data: { codigo: codigo_acomodacao },
+                success: function (d) {
+                    if (d == "{}") {
+                        msgbox('Nenhuma acomodacao encontrada.');
+                    } else {
+                        var obj = JSON.parse(d);
+                        $('#qtd_adultos').val(obj.adultos);
+                        $('#qtd_criancas').val(obj.criancas);
+                    }
+                },
+                error: function (d) {
+                    if (d.statusText === 'abort') {
+                        return;
+                    }
+                    //settings.error && settings.error.call(this, d);
+                }
+            });
+        }
+    }
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

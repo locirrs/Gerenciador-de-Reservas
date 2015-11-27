@@ -1,0 +1,136 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
+using System.Net;
+using System.Web;
+using System.Web.Mvc;
+using GerenciamentoHotel.Models;
+
+namespace GerenciamentoHotel.Controllers
+{
+    public class ConsumoController : Controller
+    {
+        private gerenciamento_hotelEntities db = new gerenciamento_hotelEntities();
+
+        // GET: Consumo
+        public ActionResult Index()
+        {
+            var tb_consumo = db.tb_consumo.Include(t => t.tb_checkin).Include(t => t.tb_itens_consumo);
+            return View(tb_consumo.ToList());
+        }
+
+        // GET: Consumo/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tb_consumo tb_consumo = db.tb_consumo.Find(id);
+            if (tb_consumo == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tb_consumo);
+        }
+
+        // GET: Consumo/Create
+        public ActionResult Create()
+        {
+            ViewBag.codigo_checkin = new SelectList(db.tb_checkin.Where(x => x.status == 1).Include("tb_hospede"), "codigo", "tb_hospede.nome");
+            ViewBag.codigo_item_consumo = new SelectList(db.tb_itens_consumo, "codigo", "descricao");
+            return View();
+        }
+
+        // POST: Consumo/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "codigo,data_consumo,codigo_checkin,codigo_item_consumo,quantidade,valor_unitario,valor_final")] tb_consumo tb_consumo)
+        {
+            if (ModelState.IsValid)
+            {
+                db.tb_consumo.Add(tb_consumo);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.codigo_checkin = new SelectList(db.tb_checkin, "codigo", "hora_entrada", tb_consumo.codigo_checkin);
+            ViewBag.codigo_item_consumo = new SelectList(db.tb_itens_consumo, "codigo", "descricao", tb_consumo.codigo_item_consumo);
+            return View(tb_consumo);
+        }
+
+        // GET: Consumo/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tb_consumo tb_consumo = db.tb_consumo.Find(id);
+            if (tb_consumo == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.codigo_checkin = new SelectList(db.tb_checkin.Where(x => x.status == 1).Include("tb_hospede"), "codigo", "tb_hospede.nome");
+            ViewBag.codigo_item_consumo = new SelectList(db.tb_itens_consumo, "codigo", "descricao", tb_consumo.codigo_item_consumo);
+            return View(tb_consumo);
+        }
+
+        // POST: Consumo/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "codigo,data_consumo,codigo_checkin,codigo_item_consumo,quantidade,valor_unitario,valor_final")] tb_consumo tb_consumo)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(tb_consumo).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.codigo_checkin = new SelectList(db.tb_checkin, "codigo", "hora_entrada", tb_consumo.codigo_checkin);
+            ViewBag.codigo_item_consumo = new SelectList(db.tb_itens_consumo, "codigo", "descricao", tb_consumo.codigo_item_consumo);
+            return View(tb_consumo);
+        }
+
+        // GET: Consumo/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tb_consumo tb_consumo = db.tb_consumo.Find(id);
+            if (tb_consumo == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tb_consumo);
+        }
+
+        // POST: Consumo/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            tb_consumo tb_consumo = db.tb_consumo.Find(id);
+            db.tb_consumo.Remove(tb_consumo);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+    }
+}

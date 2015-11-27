@@ -1,0 +1,97 @@
+﻿@model GerenciamentoHotel.Models.tb_checkout
+
+@{
+    ViewBag.Title = "Deletar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Deletar</h2>
+
+<h3>Você deseja realmente deletar este checkout?</h3>
+<div>
+    <h4>Checkout</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.data_saida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_saida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hora_saida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hora_saida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numero_diarias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numero_diarias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valor_diária)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valor_diária)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valor_telefonemas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valor_telefonemas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valor_consumo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valor_consumo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valor_total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valor_total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.forma_pagamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.forma_pagamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_checkin.hora_entrada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_checkin.hora_entrada)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Deletar" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar para Lista", "Index")
+        </div>
+    }
+</div>

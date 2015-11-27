@@ -1,0 +1,107 @@
+﻿@model IEnumerable<GerenciamentoHotel.Models.tb_checkout>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutNovo.cshtml";
+}
+
+<h2>Check-out</h2>
+
+<p>
+    <a href="@Url.Action("Create", "Checkout")" title="Novo"><span class="btn btn-default fa fa-plus-circle">Novo Checkout</span></a>
+    <a href="@Url.Action("Index", "Home")" title="Voltar"><span class="btn btn-default fa fa-home">Ir para Home</span></a>
+</p>
+<br />
+@if (Model.ToList().Count > 0)
+{
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.data_saida)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.hora_saida)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.numero_diarias)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.valor_diária)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.valor_telefonemas)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.valor_consumo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.valor_total)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.forma_pagamento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.tb_checkin.hora_entrada)
+                </th>
+                <th style="width:10%"></th>
+            </tr>
+
+            @foreach (var item in Model)
+        {
+                <tr>
+                    <td>
+                        @Html.ValueFor(modelItem => item.data_saida, "{0:dd/MM/yyyy}")
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.hora_saida)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.numero_diarias)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.valor_diária)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.valor_telefonemas)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.valor_consumo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.valor_total)
+                    </td>
+                    <td>
+                        @switch (item.forma_pagamento)
+                    {
+                        case 0:
+                                <span>Nenhuma</span>
+                            break;
+                        case 1:
+                        <span>Cartão</span>
+                            break;
+                        case 2:
+                        <span>Dinheiro</span>
+                            break;
+                    }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tb_checkin.hora_entrada)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Checkout", new { id = item.codigo })" title="Editar"><i class="fa fa-pencil-square-o"></i></a>
+                        <a href="@Url.Action("Details", "Checkout", new { id = item.codigo })" title="Detalhes"><i class="fa fa-ellipsis-h"></i></a>
+                        <a href="@Url.Action("Delete", "Checkout", new { id = item.codigo })" title="Excluir"><i class="fa fa-eraser"></i></a>
+                        <a href="@Url.Action("ListaConsumo", "Checkout", new { id = item.codigo })" target="_blank" title="Comprovante Consumo"><i class="fa fa-print"></i></a>
+
+                    </td>
+                </tr>
+        }
+
+        </table>
+        </div>
+        }
+        else
+        {
+        <div class="alert alert-info"><strong>Aviso:</strong>Nenhum checkout encontrado!</div>
+        }

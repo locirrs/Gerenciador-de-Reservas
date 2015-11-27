@@ -1,0 +1,171 @@
+﻿@model GerenciamentoHotel.Models.Consumo
+
+@{
+    ViewBag.Title = "Criar Novo Consumo";
+    Layout = "~/Views/Shared/_LayoutNovo.cshtml";
+}
+
+<h2>Criar Novo Consumo</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Consumo</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.data_consumo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.data_consumo, new { htmlAttributes = new { @class = "form-control",placeholder="Formato da data: Dia/Mês/Ano (dd/MM/aaaa)" } })
+                @Html.ValidationMessageFor(model => model.data_consumo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.codigo_checkin, "Nome do Checkin", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("codigo_checkin", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.codigo_checkin, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.codigo_item_consumo, "Item de  Consumo", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("codigo_item_consumo", null, htmlAttributes: new { @class = "form-control", onchange = "obterItem();" })
+                @Html.ValidationMessageFor(model => model.codigo_item_consumo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.quantidade, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.quantidade, new { htmlAttributes = new { @class = "form-control",onblur="calculaTotal()", onchange ="calculaTotal()" } })
+                @Html.ValidationMessageFor(model => model.quantidade, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.valor_unitario, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.valor_unitario, new { htmlAttributes = new { @class = "form-control", onblur = "calculaTotal()" } })
+                @Html.ValidationMessageFor(model => model.valor_unitario, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.valor_final, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.valor_final, new { htmlAttributes = new { @class = "form-control", disabled = true } })
+                @Html.ValidationMessageFor(model => model.valor_final, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-default" onclick="return validar();">
+                    <span class="fa fa-save"></span>Salvar
+                </button>
+                <a href="@Url.Action("Index", "Consumo")" title="Voltar"><span class="btn btn-default fa fa-arrow-left">Voltar</span></a>
+                <a href="@Url.Action("Index", "Home")" title="Voltar"><span class="btn btn-default fa fa-home">Ir para Home</span></a>
+            </div>
+        </div>
+        <br />
+    </div>
+}
+
+<script>
+
+    $(document).ready(function () {
+        $('#data_consumo').mask('00/00/0000');
+        $('#valor_unitario').mask('000.000.000.000.000,00', { reverse: true });
+        $('#valor_final').mask('000.000.000.000.000,00', { reverse: true });
+        obterItem();
+    });
+
+    function calculaTotal() {
+        var quantidade = $('#quantidade').val();
+        var valor_unitario = $('#valor_unitario').val();
+
+        if (quantidade == '') {
+            quantidade = 0;
+        }
+
+        if (quantidade < 0) {
+            msgbox('Quantidade deve ser maior que 0 (zero).');
+            $('#quantidade').val(0);
+            return;
+        }
+
+        if (valor_unitario == '0,00') {
+            valor_unitario = 0;
+        }
+        $('#valor_final').val(quantidade * (valor_unitario.replace(",", ".")));
+        $('#valor_final').mask('000.000.000.000.000,00', { reverse: true }); //TODO
+    }
+
+    function validar() {
+        var retorno = true;
+        var data_consumo = $('#data_consumo').val();
+        var quantidade = $('#quantidade').val();
+        var valor_unitario = $('#valor_unitario').val();
+
+        if (data_consumo == '') {
+            msgbox('Forneça uma data de consumo.');
+            return false;
+        }
+
+        if (quantidade == '' || quantidade == '0') {
+            msgbox('Forneça uma quantidade.');
+            return false;
+        }
+
+        if (quantidade < 0) {
+            msgbox('Quantidade deve ser maior que 0 (zero).');
+            return false;
+        }
+
+        if (valor_unitario == '' || valor_unitario == '0') {
+            msgbox('Forneça um valor unitário.');
+            return false;
+        }
+
+        return retorno;
+    }
+
+    function obterItem() {
+        var url = "ItensConsumo/GetItemConsumo";
+        var _url = ((url.toLowerCase().indexOf('https://') != -1) ? '' : (url.indexOf("/") == 0) ? '' : GLOBAL.location) + url;
+        var codigo_item_consumo = $('#codigo_item_consumo').val();
+        if (codigo_item_consumo == "0") {
+            $('#valor_unitario').val("");
+        } else {
+            $.ajax({
+                url: _url,
+                type: "GET",
+                data: { codigo: codigo_item_consumo },
+                success: function (d) {
+                    if (d == "{}") {
+                        msgbox('Nenhuma acomodacao encontrada.');
+                    } else {
+                        var obj = JSON.parse(d);
+                        $('#valor_unitario').val(obj.valor);
+                    }
+                },
+                error: function (d) {
+                    if (d.statusText === 'abort') {
+                        return;
+                    }
+                    //settings.error && settings.error.call(this, d);
+                }
+            });
+        }
+    }
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

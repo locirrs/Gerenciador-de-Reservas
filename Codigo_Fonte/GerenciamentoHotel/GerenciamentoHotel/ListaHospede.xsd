@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ListaHospede" targetNamespace="http://tempuri.org/ListaHospede.xsd" xmlns:mstns="http://tempuri.org/ListaHospede.xsd" xmlns="http://tempuri.org/ListaHospede.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="gerenciamento_hotelConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="gerenciamento_hotelConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.gerenciamento_hotelConnectionString.ConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ListaHospedeTableAdapter" GeneratorDataComponentClassName="ListaHospedeTableAdapter" Name="ListaHospede" UserDataComponentName="ListaHospedeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="gerenciamento_hotelConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select * from tb_checkin cki left join tb_hospede hsp on (cki.codigo_hospede = hsp.codigo) where cki.status = 2</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="codigo" DataSetColumn="codigo" />
+              <Mapping SourceColumn="data_entrada" DataSetColumn="data_entrada" />
+              <Mapping SourceColumn="hora_entrada" DataSetColumn="hora_entrada" />
+              <Mapping SourceColumn="data_saida" DataSetColumn="data_saida" />
+              <Mapping SourceColumn="hora_saida" DataSetColumn="hora_saida" />
+              <Mapping SourceColumn="codigo_hospede" DataSetColumn="codigo_hospede" />
+              <Mapping SourceColumn="codigo_acomodacao" DataSetColumn="codigo_acomodacao" />
+              <Mapping SourceColumn="valor_diaria" DataSetColumn="valor_diaria" />
+              <Mapping SourceColumn="codigo_funcionario" DataSetColumn="codigo_funcionario" />
+              <Mapping SourceColumn="status" DataSetColumn="status" />
+              <Mapping SourceColumn="codigo1" DataSetColumn="codigo1" />
+              <Mapping SourceColumn="nome" DataSetColumn="nome" />
+              <Mapping SourceColumn="endereco" DataSetColumn="endereco" />
+              <Mapping SourceColumn="email" DataSetColumn="email" />
+              <Mapping SourceColumn="documento_identificacao" DataSetColumn="documento_identificacao" />
+              <Mapping SourceColumn="tipo_documento_identificacao" DataSetColumn="tipo_documento_identificacao" />
+              <Mapping SourceColumn="data_nascimento" DataSetColumn="data_nascimento" />
+              <Mapping SourceColumn="nome_pai_mae" DataSetColumn="nome_pai_mae" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ListaHospede" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ListaHospede" msprop:Generator_UserDSName="ListaHospede">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ListaHospede" msprop:Generator_TableClassName="ListaHospedeDataTable" msprop:Generator_TableVarName="tableListaHospede" msprop:Generator_RowChangedName="ListaHospedeRowChanged" msprop:Generator_TablePropName="_ListaHospede" msprop:Generator_RowDeletingName="ListaHospedeRowDeleting" msprop:Generator_RowChangingName="ListaHospedeRowChanging" msprop:Generator_RowEvHandlerName="ListaHospedeRowChangeEventHandler" msprop:Generator_RowDeletedName="ListaHospedeRowDeleted" msprop:Generator_RowClassName="ListaHospedeRow" msprop:Generator_UserTableName="ListaHospede" msprop:Generator_RowEvArgName="ListaHospedeRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codigo" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" msprop:Generator_UserColumnName="codigo" type="xs:int" />
+              <xs:element name="data_entrada" msprop:Generator_ColumnVarNameInTable="columndata_entrada" msprop:Generator_ColumnPropNameInRow="data_entrada" msprop:Generator_ColumnPropNameInTable="data_entradaColumn" msprop:Generator_UserColumnName="data_entrada" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="hora_entrada" msprop:Generator_ColumnVarNameInTable="columnhora_entrada" msprop:Generator_ColumnPropNameInRow="hora_entrada" msprop:Generator_ColumnPropNameInTable="hora_entradaColumn" msprop:Generator_UserColumnName="hora_entrada" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="data_saida" msprop:Generator_ColumnVarNameInTable="columndata_saida" msprop:Generator_ColumnPropNameInRow="data_saida" msprop:Generator_ColumnPropNameInTable="data_saidaColumn" msprop:Generator_UserColumnName="data_saida" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="hora_saida" msprop:Generator_ColumnVarNameInTable="columnhora_saida" msprop:Generator_ColumnPropNameInRow="hora_saida" msprop:Generator_ColumnPropNameInTable="hora_saidaColumn" msprop:Generator_UserColumnName="hora_saida" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="codigo_hospede" msprop:Generator_ColumnVarNameInTable="columncodigo_hospede" msprop:Generator_ColumnPropNameInRow="codigo_hospede" msprop:Generator_ColumnPropNameInTable="codigo_hospedeColumn" msprop:Generator_UserColumnName="codigo_hospede" type="xs:int" />
+              <xs:element name="codigo_acomodacao" msprop:Generator_ColumnVarNameInTable="columncodigo_acomodacao" msprop:Generator_ColumnPropNameInRow="codigo_acomodacao" msprop:Generator_ColumnPropNameInTable="codigo_acomodacaoColumn" msprop:Generator_UserColumnName="codigo_acomodacao" type="xs:int" />
+              <xs:element name="valor_diaria" msprop:Generator_ColumnVarNameInTable="columnvalor_diaria" msprop:Generator_ColumnPropNameInRow="valor_diaria" msprop:Generator_ColumnPropNameInTable="valor_diariaColumn" msprop:Generator_UserColumnName="valor_diaria" type="xs:decimal" minOccurs="0" />
+              <xs:element name="codigo_funcionario" msprop:Generator_ColumnVarNameInTable="columncodigo_funcionario" msprop:Generator_ColumnPropNameInRow="codigo_funcionario" msprop:Generator_ColumnPropNameInTable="codigo_funcionarioColumn" msprop:Generator_UserColumnName="codigo_funcionario" type="xs:int" />
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" type="xs:short" minOccurs="0" />
+              <xs:element name="codigo1" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncodigo1" msprop:Generator_ColumnPropNameInRow="codigo1" msprop:Generator_ColumnPropNameInTable="codigo1Column" msprop:Generator_UserColumnName="codigo1" type="xs:int" minOccurs="0" />
+              <xs:element name="nome" msprop:Generator_ColumnVarNameInTable="columnnome" msprop:Generator_ColumnPropNameInRow="nome" msprop:Generator_ColumnPropNameInTable="nomeColumn" msprop:Generator_UserColumnName="nome" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="endereco" msprop:Generator_ColumnVarNameInTable="columnendereco" msprop:Generator_ColumnPropNameInRow="endereco" msprop:Generator_ColumnPropNameInTable="enderecoColumn" msprop:Generator_UserColumnName="endereco" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="email" msprop:Generator_ColumnVarNameInTable="columnemail" msprop:Generator_ColumnPropNameInRow="email" msprop:Generator_ColumnPropNameInTable="emailColumn" msprop:Generator_UserColumnName="email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="documento_identificacao" msprop:Generator_ColumnVarNameInTable="columndocumento_identificacao" msprop:Generator_ColumnPropNameInRow="documento_identificacao" msprop:Generator_ColumnPropNameInTable="documento_identificacaoColumn" msprop:Generator_UserColumnName="documento_identificacao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tipo_documento_identificacao" msprop:Generator_ColumnVarNameInTable="columntipo_documento_identificacao" msprop:Generator_ColumnPropNameInRow="tipo_documento_identificacao" msprop:Generator_ColumnPropNameInTable="tipo_documento_identificacaoColumn" msprop:Generator_UserColumnName="tipo_documento_identificacao" type="xs:short" minOccurs="0" />
+              <xs:element name="data_nascimento" msprop:Generator_ColumnVarNameInTable="columndata_nascimento" msprop:Generator_ColumnPropNameInRow="data_nascimento" msprop:Generator_ColumnPropNameInTable="data_nascimentoColumn" msprop:Generator_UserColumnName="data_nascimento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="nome_pai_mae" msprop:Generator_ColumnVarNameInTable="columnnome_pai_mae" msprop:Generator_ColumnPropNameInRow="nome_pai_mae" msprop:Generator_ColumnPropNameInTable="nome_pai_maeColumn" msprop:Generator_UserColumnName="nome_pai_mae" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

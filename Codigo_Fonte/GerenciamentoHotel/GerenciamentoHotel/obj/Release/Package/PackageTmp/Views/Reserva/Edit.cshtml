@@ -1,0 +1,157 @@
+﻿@model GerenciamentoHotel.Models.ReservaModel
+
+@{
+    ViewBag.Title = "Editar Reserva";
+    Layout = "~/Views/Shared/_LayoutNovo.cshtml";
+}
+
+<h2>Editar Reserva</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        @if (ViewBag.UserFail != null)
+        {
+            <script type="text/javascript">
+        @{
+            if (TempData["erro"] != null)
+            {
+                <text>msgbox("Acomodação já está reservada para esta data!");</text>
+            }
+
+
+        }
+
+
+            </script>
+        }
+        <h4>Reserva</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.codigo)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.codigo_hospede, "Hóspede", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("codigo_hospede", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.codigo_hospede, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.data_entrada, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.data_entrada, new { @class = "form-control", placeholder = "Formato Dia/Mês/Ano (dd/MM/aaaa)" })
+                @*@Html.ValidationMessageFor(model => model.data_entrada, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.data_saida, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.data_saida, new { @class = "form-control", placeholder = "Formato Dia/Mês/Ano (dd/MM/aaaa)" })
+                @*@Html.ValidationMessageFor(model => model.data_saida, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.codigo_acomodacao, "Acomodação", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("codigo_acomodacao", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.codigo_acomodacao, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.qtd_adultos, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.qtd_adultos, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.qtd_adultos, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.qtd_criancas, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.qtd_criancas, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.qtd_criancas, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-default" onclick="return validar();">
+                    <span class="fa fa-save"></span>Salvar
+                </button>
+                <a href="@Url.Action("Index", "Reserva")" title="Voltar"><span class="btn btn-default fa fa-arrow-left">Voltar</span></a>
+                <a href="@Url.Action("Index", "Home")" title="Voltar"><span class="btn btn-default fa fa-home">Ir para Home</span></a>
+            </div>
+        </div>
+        <br />
+    </div>
+}
+
+<script>
+
+    $(document).ready(function () {
+        $('#data_entrada').mask('00/00/0000');
+        $('#data_saida').mask('00/00/0000');
+    });
+
+    function validar() {
+        var retorno = true;
+        var codigo_hospede = $('#codigo_hospede').val();
+        var data_entrada = $('#data_entrada').val();
+        var data_saida = $('#data_saida').val();
+        var codigo_acomodacao = $('#codigo_acomodacao').val();
+        var qtd_adultos = $('#qtd_adultos').val();
+        var qtd_criancas = $('#qtd_criancas').val();
+
+        if (codigo_hospede == null) {
+            msgbox('Escolha um hóspede.');
+            return false;
+        }
+
+        if (data_entrada == '') {
+            msgbox('Forneça a data de entrada.');
+            return false;
+        }
+
+        if (checkDate("data_entrada") == false) {
+            return false;
+        }
+
+        if (data_saida == '') {
+            msgbox('Forneça a data de saída.');
+            return false;
+        }
+
+        if (checkDate("data_saida") == false) {
+            return false;
+        }
+
+        if (codigo_acomodacao == '') {
+            msgbox('Forneça a acomodação.');
+            return false;
+        }
+
+        if (qtd_adultos == '') {
+            msgbox('Forneça quantidade de pessoas adultas para a reserva.');
+            return false;
+        }
+
+        if (qtd_criancas == '') {
+            msgbox('Forneça quantidade de crianças para a reserva.');
+            return false;
+        }
+
+        return retorno;
+    }
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

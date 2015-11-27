@@ -1,0 +1,433 @@
+﻿<!DOCTYPE html>
+<html>
+
+@{
+    GerenciamentoHotel.Models.UserAuthenticated usuarioLogado = (GerenciamentoHotel.Models.UserAuthenticated)HttpContext.Current.Session["USER_SESSION"];
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @*@Styles.Render("~/Content/css")*@
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/Content/Site.css")
+    @Styles.Render("~/Content/plugin/css/bootstrap.min.css")
+    @Styles.Render("~/Content/plugin/css/font-awesome.min.css")
+    @Styles.Render("~/Content/plugin/css/templatemo_misc.css")
+    @Styles.Render("~/Content/plugin/css/easy-responsive-tabs.css")
+    @Styles.Render("~/Content/plugin/css/templatemo_style.css")
+
+
+    @Scripts.Render("~/Content/plugin/js/jquery.lightbox.js")
+    @Scripts.Render("~/Content/plugin/js/jquery.mask.min.js")
+    @Scripts.Render("~/Content/plugin/js/bootstrap.min.js")
+    @Scripts.Render("~/Content/plugin/js/app.js")
+
+    @Scripts.Render("~/Content/plugin/js/templatemo_custom.js")
+    @Scripts.Render("~/Content/plugin/js/easyResponsiveTabs.js")
+
+    <script type="text/javascript">
+        @{
+            int porta = System.Web.HttpContext.Current.Request.Url.Port;
+        }
+        var GLOBAL = GLOBAL || {};
+
+        GLOBAL['location'] = '@("http://" + System.Web.HttpContext.Current.Request.Url.Host + (System.Web.HttpContext.Current.Request.Url.Port==80? "" : ":" + System.Web.HttpContext.Current.Request.Url.Port.ToString()) + (string.IsNullOrEmpty(System.Web.HttpContext.Current.Request.ApplicationPath) ? "" : System.Web.HttpContext.Current.Request.ApplicationPath + "/"))';
+
+    </script>
+
+</head>
+<body>
+    <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 style="color:#333" class="modal-title" id="alertLabel">Alerta - Gerenciamento de Reservas</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="conteudoMensagem" style="color:#333"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- logo start -->
+    <div class="logocontainer">
+        <div class="row">
+            <h1>
+                @Html.UserActionLink("Hotel WKX", "Index", "Home")
+            </h1>
+            <div class="clear"></div>
+            <div class="templatemo_smalltitle">Gerenciamento de Reservas</div>
+        </div>
+    </div>
+    <!-- logo end -->
+
+    <div id="menu-container" class="main_menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default" style="border-color:@ViewBag.color;">
+                        <div class="panel-body" style="background:@ViewBag.color;">
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- homepage start -->
+        <div class="content homepage" id="menu-1">
+            <div class="container">
+                <div class="col-md-3 col-sm-6 templatemo_leftgap">
+                    <div class="templatemo_mainservice templatemo_botgap">
+                        <div class="templatemo_link">
+                            @Html.UserActionLink("Home", "Index", "Home")
+                        </div>
+                    </div>
+                    <div class="templatemo_mainimg"><img src="~/Content/plugin/images/templatemo_home1.jpg" alt="home img 01"></div>
+                </div>
+                <div class="col-md-3 col-sm-6 templatemo_leftgap">
+                    <div class="templatemo_mainimg templatemo_botgap templatemo_portfotopgap"><img src="~/Content/plugin/images/templatemo_home2.jpg" alt="home img 02"></div>
+                    <div class="templatemo_mainportfolio">
+                        <div class="templatemo_link">
+                            @Html.ActionLink("Reserva", "Index", "Reserva")
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 templatemo_leftgap">
+                    <div class="templatemo_maintesti templatemo_botgap templatemo_topgap">
+                        <div class="templatemo_link">
+                            @Html.ActionLink("Hóspede", "Index", "Hospede")
+                        </div>
+                    </div>
+                    <div class="templatemo_mainimg"><img src="~/Content/plugin/images/templatemo_home3.jpg" alt="home img 03"></div>
+                </div>
+                <div class="col-md-3 col-sm-6 templatemo_leftgap">
+                    <div class="templatemo_mainabout templatemo_botgap">
+                        <div class="templatemo_link">
+                            @Html.ActionLink("Acomodação", "Index", "Acomodacao")
+                        </div>
+                    </div>
+                    <div class="templatemo_maincontact templatemo_botgap">
+                        <div class="templatemo_link">
+                            @Html.ActionLink("Check-in", "Index", "Checkin")
+                        </div>
+                    </div>
+                    <div class="templatemo_mainabout templatemo_botgap">
+                        <div class="templatemo_link">
+                            @Html.ActionLink("Consumo", "Index", "Consumo")
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 templatemo_leftgap">
+                    <div class="templatemo_mainimg templatemo_botgap">
+                        <img src="~/Content/plugin/images/templatemo_home4.jpg" alt="home img 04">
+                    </div>
+                    <div class="templatemo_mainservice templatemo_botgap" style="display:none;">
+                        <div class="templatemo_link">
+                            @Html.ActionLink("Hóspede Check-in", "Index", "HospedeCheckin")
+                        </div>
+                    </div>
+                    <div class="templatemo_mainservice templatemo_botgap templatemo_topgap">
+                        <div class="templatemo_link">
+                            <a class="show-3 templatemo_page3" href="#">Portfolio</a>
+                        </div>
+                    </div>
+                    <div class="templatemo_maincontact">
+                        <div class="templatemo_link"><a class="show-6 templatemo_page6" href="#">Contato</a></div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 templatemo_leftgap">
+                    <div class="templatemo_mainimg templatemo_botgap templatemo_portfotopgap"><img src="~/Content/plugin/images/templatemo_home2.jpg" alt="home img 02"></div>
+                    <div class="templatemo_mainportfolio">
+                        <div class="templatemo_link">
+                            @Html.ActionLink("Lista Hóspede", "ListaHospede", "Checkin", new { }, new { target = "_blank" })
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 templatemo_leftgap">
+                    <div class="templatemo_mainabout templatemo_botgap templatemo_topgap">
+                        <div class="templatemo_link">
+                            @Html.ActionLink("Itens Consumo", "Index", "ItensConsumo")
+                        </div>
+                    </div>
+                    <div class="templatemo_mainimg templatemo_botgap">
+                        <img src="~/Content/plugin/images/templatemo_home4.jpg" alt="home img 04">
+                    </div>
+                    <div class="templatemo_maincontact">
+                        <div class="templatemo_link">
+                            @Html.ActionLink("Check-out", "Index", "Checkout")
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 templatemo_leftgap">
+                    <div class="templatemo_mainimg templatemo_botgap templatemo_topgap">
+                        <img src="~/Content/plugin/images/templatemo_home4.jpg" alt="home img 04">
+                    </div>
+                    <div class="templatemo_mainabout templatemo_botgap">
+                        <div class="templatemo_link">
+                            @Html.ActionLink("Funcionário", "Index", "Funcionario")
+                        </div>
+                    </div>
+                    <div class="templatemo_maincontact">
+                        <div class="templatemo_link">
+                            @Html.UserActionLink("Sair", "LogOut", "Account")
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- homepage end -->
+        <!-- portfilio start -->
+        <div class="portfolio" id="menu-3" style="display: none;">
+            <div class="container">
+                <div class="col-md-3 col-sm-6 templatemo_leftgap">
+                    <div class="templatemo_insideportfolio templatemo_botgap">
+                        <div class="templatemo_portfoliotext">
+                            <h2>Portfolio</h2>
+                            <div class="clear"></div>
+                            Suspendisse condimentum metus neque, at adipiscing metus venenatis eu. Mauris sit amet erat laoreet, ullamcorper justo sit amet, vehicula purus. Nulla sagittis pulvinar erat, sit amet venenatis lacus fringilla vitae.
+                        </div>
+                    </div>
+                    <div class="templatemo_portfolioback">
+                        <div class="templatemo_link"><a class="show-1 templatemo_homeportfolio" href="#">Voltar</a></div>
+                    </div>
+
+                </div>
+                <div class="col-md-3 col-sm-6 templatemo_leftgap">
+                    <div class="templatemo_botgap templatemo_portfotopgap gallery-item">
+                        <img src="~/Content/plugin/images/portfolio/templatemo_portfolio01.jpg" alt="gallery 1">
+                        <div class="overlay">
+                            <a href="~/Content/plugin/images/portfolio/templatemo_portfolio01.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
+                        </div>
+                    </div>
+                    <div class="templatemo_botgap templatemo_topgap gallery-item">
+                        <img src="~/Content/plugin/images/portfolio/templatemo_portfolio02.jpg" alt="gallery 2">
+                        <div class="overlay">
+                            <a href="~/Content/plugin/images/portfolio/templatemo_portfolio02.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
+                        </div>
+                    </div>
+                    <div class="templatemo_botgap templatemo_topgap gallery-item">
+                        <img src="~/Content/plugin/images/portfolio/templatemo_portfolio03.jpg" alt="gallery 3">
+                        <div class="overlay">
+                            <a href="images/portfolio/templatemo_portfolio03.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 templatemo_leftgap">
+                    <div class="templatemo_botgap templatemo_topgap gallery-item">
+                        <img src="~/Content/plugin/images/portfolio/templatemo_portfolio04.jpg" alt="gallery 4">
+                        <div class="overlay">
+                            <a href="~/Content/plugin/images/portfolio/templatemo_portfolio04.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
+                        </div>
+                    </div>
+                    <div class="templatemo_botgap templatemo_topgap gallery-item">
+                        <img src="~/Content/plugin/images/portfolio/templatemo_portfolio05.jpg" alt="gallery 5">
+                        <div class="overlay">
+                            <a href="~/Content/plugin/images/portfolio/templatemo_portfolio05.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
+                        </div>
+                    </div>
+                    <div class="templatemo_botgap templatemo_topgap gallery-item">
+                        <img src="~/Content/plugin/images/portfolio/templatemo_portfolio06.jpg" alt="gallery 6">
+                        <div class="overlay">
+                            <a href="~/Content/plugin/images/portfolio/templatemo_portfolio06.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 templatemo_leftgap">
+                    <div class="templatemo_botgap templatemo_topgap gallery-item">
+                        <img src="~/Content/plugin/images/portfolio/templatemo_portfolio07.jpg" alt="gallery 7">
+                        <div class="overlay">
+                            <a href="~/Content/plugin/images/portfolio/templatemo_portfolio07.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
+                        </div>
+                    </div>
+                    <div class="templatemo_botgap templatemo_topgap gallery-item">
+                        <img src="~/Content/plugin/images/portfolio/templatemo_portfolio08.jpg" alt="gallery 8">
+                        <div class="overlay">
+                            <a href="~/Content/plugin/images/portfolio/templatemo_portfolio08.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
+                        </div>
+                    </div>
+                    <div class="templatemo_botgap templatemo_topgap gallery-item">
+                        <img src="~/Content/plugin/images/portfolio/templatemo_portfolio09.jpg" alt="gallery 9">
+                        <div class="overlay">
+                            <a href="~/Content/plugin/images/portfolio/templatemo_portfolio09.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- portfolio end -->
+        <!-- contact start -->
+        <div class="content contact" id="menu-6">
+            <div class="container">
+                <div class="row templatemo_bordergapborder">
+                    <div class="col-md-3 col-sm-12 templatemo_leftgap">
+                        <div class="templatemo_mainimg templatemo_botgap"><img src="~/Content/plugin/images/templatemo_contact1.jpg" alt="contact image"></div>
+                        <div class="templatemo_maincontact templatemo_botgap">
+                            <div class="templatemo_linkcontact"><a class="show-1 templatemo_homecontact" href="#">Voltar</a></div>
+                        </div>
+                    </div>
+
+                    <div class="templatemo_col37 col-sm-12 templatemo_leftgap">
+                        <div class="templatemo_graybg templatemo_paddinggap">
+                            <h2>Contato</h2>
+                            <div class="clear"></div>
+                            <form role="form">
+                                <div class="templatemo_form">
+                                    <input name="fullname" type="text" class="form-control" id="fullname" placeholder="Seu nome" maxlength="40">
+                                </div>
+                                <div class="templatemo_form">
+                                    <input name="email" type="text" class="form-control" id="email" placeholder="Seu email" maxlength="40">
+                                </div>
+                                <div class="templatemo_form">
+                                    <input name="subject" type="text" class="form-control" id="subject" placeholder="Assunto" maxlength="60">
+                                </div>
+                                <div class="templatemo_form">
+                                    <textarea name="message" class="form-control" id="message" placeholder="Sua mensagem..."></textarea>
+                                </div>
+                                <div class="templatemo_form"><button type="button" class="btn btn-primary" id="btnSendEmail" onclick="enviarEmail();">Enviar</button></div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="templatemo_col37 col-sm-12 templatemo_leftgap templatemo_topgap">
+                        <div class="templatemo_graybg templatemo_paddinggap">
+                            <h2>Nossa localização</h2>
+                            <div class="clear"></div>
+                            <div class="templatemo_contactmap">
+                                <div id="templatemo_map"></div>
+                            </div>
+                            <div class="templatemo_address">
+                                Rua Guaraci, 1486 - Centro - Capão da Canoa/RS<br>
+                                Tel: 010-020-0340 Email: info@company.com
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- contact end -->
+    </div>
+
+    <div class="logocontainer">
+        <div class="row">
+            <div class="templatemo_footer">Copyright © 2015 Company Name</div>
+        </div>
+    </div>
+    <!-- logo end -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //$('#horizontalTab').easyResponsiveTabs({
+            //    type: 'default', //Types: default, vertical, accordion
+            //    width: 'auto', //auto or any width like 600px
+            //    fit: true, // 100% fit in a container
+            //    closed: 'accordion', // Start closed if in accordion view
+            //    activate: function (event) { // Callback function if tab is switched
+            //        var $tab = $(this);
+            //        var $info = $('#tabInfo');
+            //        var $name = $('span', $info);
+
+            //        $name.text($tab.text());
+
+            //        $info.show();
+
+            //    }
+            //});
+
+            //$('#ab').easyResponsiveTabs({
+            //    type: 'vertical',
+            //    width: 'auto',
+            //    fit: true,
+            //});
+
+
+            //$('#cmt').easyResponsiveTabs({
+            //    type: 'vertical',
+            //    width: 'auto',
+            //    fit: true,
+            //});
+        });
+
+        function enviarEmail() {
+            var fullname = $('#fullname').val();
+            var email = $('#email').val();
+            var subject = $('#subject').val();
+            var message = $('#message').val();
+
+            if (fullname == '') {
+                msgbox('Forneça o seu nome!');
+                return;
+            }
+
+            if (email == '') {
+                msgbox('Forneça um email!');
+                return;
+            }
+
+            if (subject == '') {
+                msgbox('Forneça um assunto!');
+                return;
+            }
+
+            if (message == '') {
+                msgbox('Forneça a mensagem desejada!');
+                return;
+            }
+
+            var url = "Home/EnviarEmail";
+
+            var _url = ((url.toLowerCase().indexOf('https://') != -1) ? '' : (url.indexOf("/") == 0) ? '' : GLOBAL.location) + url;
+
+            var model = {
+                fullname: fullname,
+                email: email,
+                subject: subject,
+                message: message
+            }
+
+            $('#btnSendEmail').html("Aguarde... Enviando email...");
+
+            $.ajax({
+                url: _url,
+                data: model,
+                type: "POST",
+                dataType: "json",
+                success: function (data) {
+                    if (data.retorno == "true") {
+                        msgbox("Mensagem enviada com sucesso!");
+                        $('#fullname').val('');
+                        $('#email').val('');
+                        $('#subject').val('');
+                        $('#message').val('');
+                    } else {
+                        msgbox('Enviar');
+                    }
+                    $('#btnSendEmail').html("Enviar");
+                },
+                error: function (data) {
+                    msgbox('Erro ao enviar email!');
+                    $('#btnSendEmail').html("Enviar");
+                }
+            });
+            
+
+            return;
+
+        }
+
+    </script>
+
+    @RenderSection("scripts", required: false)
+
+</body>
+
+</html>

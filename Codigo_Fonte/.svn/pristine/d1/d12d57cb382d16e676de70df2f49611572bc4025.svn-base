@@ -1,0 +1,91 @@
+﻿@model GerenciamentoHotel.Models.tb_checkout
+
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Checkout</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.data_saida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_saida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hora_saida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hora_saida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numero_diarias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numero_diarias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valor_diária)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valor_diária)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valor_telefonemas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valor_telefonemas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valor_consumo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valor_consumo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valor_total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valor_total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.forma_pagamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.forma_pagamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_checkin.hora_entrada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_checkin.hora_entrada)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.codigo }) |
+    @Html.ActionLink("Voltar para Lista", "Index")
+</p>

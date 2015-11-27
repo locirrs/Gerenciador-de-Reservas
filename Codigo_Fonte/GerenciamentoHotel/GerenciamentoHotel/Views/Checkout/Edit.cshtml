@@ -1,0 +1,217 @@
+﻿@model GerenciamentoHotel.Models.Checkout
+
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/Shared/_LayoutNovo.cshtml";
+}
+
+<h2>Editar</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.codigo)
+
+    <div class="form-horizontal">
+
+        <h4>Checkout</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.codigo_checkin, "Responsável pelo Checkin", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("codigo_checkin", new SelectList(ViewBag.listaCheckin, "Value", "Text"), htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.codigo_checkin, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.data_saida, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.data_saida, new { htmlAttributes = new { @class = "form-control", placeholder = "Formato: Dia/Mês/Ano (dd/mm/aaaa)", @Value = Model.data_saida } })
+                <input type="button" class="btn btn-default" onclick="javascript:carregaValores();" value="Carregar Valores" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.hora_saida, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.hora_saida, new { htmlAttributes = new { @class = "form-control", placeholder = "Formato Hora:Minuto (HH:MM)" } })
+                @Html.ValidationMessageFor(model => model.hora_saida, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.numero_diarias, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.numero_diarias, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.numero_diarias, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.valor_diaria, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.valor_diaria, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.valor_diaria, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.valor_telefonemas, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.valor_telefonemas, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.valor_telefonemas, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.valor_consumo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.valor_consumo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.valor_consumo, "", new { @class = "text-danger", @disabled = "disabled" })
+                <br />
+                <input type="button" class="btn btn-default" onclick="javascript:carregaValoresFinal();" value="Calcular Valor Total" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.valor_total, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.valor_total, new { htmlAttributes = new { @class = "form-control", disabled = true } })
+                @Html.ValidationMessageFor(model => model.valor_total, "", new { @class = "text-danger" })
+
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.forma_pagamento, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.forma_pagamento, new SelectList(ViewBag.formaPagamento, "Value", "Text"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.forma_pagamento, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-default" onclick="return validar();">
+                    <span class="fa fa-save"></span>Salvar
+                </button>
+                <a href="@Url.Action("Index", "Checkout")" title="Voltar"><span class="btn btn-default fa fa-arrow-left">Voltar</span></a>
+                <a href="@Url.Action("Index", "Home")" title="Voltar"><span class="btn btn-default fa fa-home">Ir para Home</span></a>
+            </div>
+        </div>
+        <br />
+    </div>
+}
+
+<script>
+    $(document).ready(function () {
+        $('#data_saida').mask('00/00/0000');
+        $('#hora_saida').mask('00:00');
+        $('#valor_diaria').mask('000.000.000.000.000,00', { reverse: true });
+        $('#valor_telefonemas').mask('000.000.000.000.000,00', { reverse: true });
+        $('#valor_consumo').mask('000.000.000.000.000,00', { reverse: true });
+        $('#valor_total').mask('000.000.000.000.000,00', { reverse: true });
+    });
+
+    function validar() {
+        var retorno = true;
+        var data_saida = $('#data_saida').val();
+        var hora_saida = $('#hora_saida').val();
+        var numero_diarias = $('#numero_diarias').val();
+        var forma_pagamento = $('#forma_pagamento').val();
+
+        if (data_saida == '') {
+            msgbox('Forneça uma data de saída.')
+            return false;
+        }
+
+        if (checkDate("data_saida") == false) {
+            return false;
+        }
+
+        if (hora_saida == '') {
+            msgbox('Forneça a hora de saída.');
+            return false;
+        }
+        if (numero_diarias == '') {
+            msgbox('Forneça o número de diárias.');
+            return false;
+        }
+        if (forma_pagamento == '0') {
+            msgbox('Selecione uma forma de pagamento.')
+            return false;
+        }
+
+        return true;
+    }
+
+    function carregaValores() {
+        var url = "Checkin/PesquisaValores";
+
+        if ($("#data_saida").val() == "") {
+            msgbox("É preciso preeencher a data da saida");
+            return;
+        }
+
+        var _url = ((url.toLowerCase().indexOf('https://') != -1) ? '' : (url.indexOf("/") == 0) ? '' : GLOBAL.location) + url;
+
+        $.ajax({
+            url: _url,
+            type: "GET",
+            data: { idCheckin: $("#codigo_checkin").val(), data: $("#data_saida").val() },
+            success: function (d) {
+                if (d == "{}") {
+                    msgbox('Nenhuma informação encontrada para data fornecida.');
+                } else {
+
+                    var obj = JSON.parse(d);
+
+                    $("#valor_diaria").val(obj.valorDiaria);
+                    $("#valor_consumo").val(obj.valorConsumo);
+                    $("#valor_consumo").val($("#valor_consumo").val().replace(".", ","));
+                    $("#numero_diarias").val(obj.numeroDiaria);
+                }
+            },
+            error: function (d) {
+                if (d.statusText === 'abort') {
+                    return;
+                }
+                //settings.error && settings.error.call(this, d);
+            }
+        });
+    }
+
+    function carregaValoresFinal() {
+
+        var valorTotal = 0;
+
+
+        if ($("#numero_diarias").val() == '') {
+            msgbox("Forneça o número de diárias.");
+            return;
+        }
+
+        if ($("#valor_diaria").val() == "") {
+            msgbox("Forneça o valor da diária.");
+            return;
+        }
+        var valorTelefonema = $("#valor_telefonemas").val() == "" ? 0 : parseFloat($("#valor_telefonemas").val());
+        var valorDiaria = $("#valor_diaria").val() == "" ? 0 : (parseFloat($("#numero_diarias").val()) * parseFloat($("#valor_diaria").val().replace(".", "").replace(",", ".")));
+        var valorConsumo = $("#valor_consumo").val() == "" ? 0 : $("#valor_consumo").val().replace(".", "").replace(",", ".");
+
+        valorTotal = (valorTelefonema * 1.0) + (valorDiaria * 1.0) + (valorConsumo * 1.0);
+
+        $("#valor_total").val(valorTotal);
+        $("#valor_total").val($("#valor_total").val().replace(".", ","));
+    }
+</script>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

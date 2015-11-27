@@ -1,0 +1,244 @@
+﻿@model GerenciamentoHotel.Models.Reserva
+
+@{
+    ViewBag.Title = "Criar Checkin";
+    Layout = "~/Views/Shared/_LayoutNovo.cshtml";
+}
+
+<h2>Criar Checkin</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @if (ViewBag.UserFail != null)
+        {
+            <script type="text/javascript">
+        @{
+            if (TempData["erro"] != null)
+            {
+                <text>msgbox("Acomodação já está reservada para esta data!");</text>
+            }
+
+
+        }
+
+
+            </script>
+        }
+        <h4>Checkin</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.data_entrada, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.data_entrada, "{0:dd/MM/yyyy}", new { @class = "form-control", placeholder = "Formato Dia/Mês/Ano (dd/MM/aaaa)" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.hora_entrada, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.hora_entrada, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.hora_entrada, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.data_saida, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.data_saida, "{0:dd/MM/yyyy}", new { @class = "form-control", placeholder = "Formato Dia/Mês/Ano (dd/MM/aaaa)" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.hora_saida, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.hora_saida, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.hora_saida, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.codigo_hospede, "Hóspede", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("codigo_hospede", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.codigo_hospede, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.codigo_acomodacao, "Acomodação", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("codigo_acomodacao", null, htmlAttributes: new { @class = "form-control", onchange = "obterAcomodacao();" })
+                @Html.ValidationMessageFor(model => model.codigo_acomodacao, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.valor_diaria, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.valor_diaria, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.valor_diaria, "", new { @class = "text-danger" })
+            </div>
+        </div>       
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.qtd_adultos, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.qtd_adultos, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.qtd_adultos, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.qtd_criancas, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.qtd_criancas, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.qtd_criancas, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.codigo_funcionario, "Funcionário", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("codigo_funcionario", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.codigo_funcionario, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.status, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.status, new SelectList(ViewBag.status, "Value", "Text"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.status, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-default" onclick="return validar();">
+                    <span class="fa fa-save"></span>Salvar
+                </button>
+                <a href="@Url.Action("Index", "Checkin")" title="Voltar"><span class="btn btn-default fa fa-arrow-left">Voltar</span></a>
+                <a href="@Url.Action("Index", "Home")" title="Voltar"><span class="btn btn-default fa fa-home">Ir para Home</span></a>
+            </div>
+        </div>
+        <br />
+    </div>
+}
+
+<script>
+
+    $(document).ready(function () {
+        $('#data_entrada').mask('00/00/0000');
+        $('#hora_entrada').mask('00:00');
+        $('#data_saida').mask('00/00/0000');
+        $('#hora_saida').mask('00:00');
+        $('#valor_diaria').mask('000.000.000.000.000,00', { reverse: true });
+        obterAcomodacao();
+    });
+
+    function validar() {
+        var retorno = true;
+        var data_entrada = $('#data_entrada').val();
+        var hora_entrada = $('#hora_entrada').val();
+        var data_saida = $('#data_saida').val();
+        var hora_saida = $('#hora_saida').val();
+        var valor_diaria = $('#valor_diaria').val();
+        var status = $('#status').val();
+        var qtd_adultos = $('#qtd_adultos').val();
+
+        if (qtd_adultos == '') {
+            qtd_adultos = 0;
+        }
+
+        var codigo_hospede = $('#codigo_hospede').val();
+        var codigo_acomodacao = $('#codigo_acomodacao').val();
+        var codigo_funcionario = $('#codigo_funcionario').val();
+
+        if (data_entrada == '') {
+            msgbox('Forneça uma data de entrada.');
+            return false;
+        }
+
+        if (checkDate("data_entrada") == false) {
+            return false;
+        }
+
+        if (hora_entrada == '') {
+            msgbox('Forneça uma hora de entrada.');
+            return false;
+        }
+
+        if (data_saida == '') {
+            msgbox('Forneça uma data de saída.');
+            return false;
+        }
+
+        if (checkDate("data_saida") == false) {
+            return false;
+        }
+
+        if (hora_saida == '') {
+            msgbox('Forneça uma hora de saída.');
+            return false;
+        }
+
+        if (valor_diaria == '') {
+            msgbox('Forneça um valor de diária.');
+            return false;
+        }
+
+        if (status == '0') {
+            msgbox('Forneça um status.');
+            return false;
+        }
+
+        if (qtd_adultos <= 0) {
+            msgbox('É necessário pelo menos um adulto no Check-in.');
+            return false;
+        }        
+
+        return retorno;
+    }
+
+    function obterAcomodacao() {
+        var url = "Acomodacao/GetAcomodacao";
+        var _url = ((url.toLowerCase().indexOf('https://') != -1) ? '' : (url.indexOf("/") == 0) ? '' : GLOBAL.location) + url;
+        var codigo_acomodacao = $('#codigo_acomodacao').val();
+        if (codigo_acomodacao == "0") {
+            $('#qtd_adultos').val("");
+            $('#qtd_criancas').val("");
+            $('#valor_diaria').val("");
+        } else {
+            $.ajax({
+                url: _url,
+                type: "GET",
+                data: { codigo: codigo_acomodacao },
+                success: function (d) {
+                    if (d == "{}") {
+                        msgbox('Nenhuma acomodacao encontrada.');
+                    } else {
+                        var obj = JSON.parse(d);
+                        $('#qtd_adultos').val(obj.adultos);
+                        $('#qtd_criancas').val(obj.criancas);
+                        $('#valor_diaria').val(obj.diaria);
+                    }
+                },
+                error: function (d) {
+                    if (d.statusText === 'abort') {
+                        return;
+                    }
+                    //settings.error && settings.error.call(this, d);
+                }
+            });
+        }
+    }
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

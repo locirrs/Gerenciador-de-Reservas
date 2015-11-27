@@ -1,0 +1,148 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
+using System.Net;
+using System.Web;
+using System.Web.Mvc;
+using GerenciamentoHotel.Filters;
+using GerenciamentoHotel.Models;
+using Timesheet.Filters;
+
+
+namespace GerenciamentoHotel.Controllers
+{
+    [Authenticated]
+    [Permission]
+    public class AcomodacaoController : Controller
+    {
+        private gerenciamento_hotelEntities db = new gerenciamento_hotelEntities();
+
+        // GET: Acomodacao
+        public ActionResult Index()
+        {
+            return View(db.tb_acomodacao.ToList());
+        }
+
+        // GET: Acomodacao/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tb_acomodacao tb_acomodacao = db.tb_acomodacao.Find(id);
+            if (tb_acomodacao == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tb_acomodacao);
+        }
+
+        // GET: Acomodacao/Create
+        public ActionResult Create()
+        {
+            var items = new List<SelectListItem>()
+                    {
+                        new SelectListItem {Text = "Selecione", Value = "0"},
+                        new SelectListItem {Text = "Luxo", Value = "1"},
+                        new SelectListItem {Text = "Simples", Value = "2"}
+                    };
+
+            ViewBag.tipo = items;
+            return View();
+        }
+
+        // POST: Acomodacao/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "codigo,descricao,tipo,preco_diaria,numeracao,qtd_pessoas_adultas,qtd_criancas")] tb_acomodacao tb_acomodacao)
+        {
+            if (ModelState.IsValid)
+            {
+                db.tb_acomodacao.Add(tb_acomodacao);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(tb_acomodacao);
+        }
+
+        // GET: Acomodacao/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tb_acomodacao tb_acomodacao = db.tb_acomodacao.Find(id);
+            if (tb_acomodacao == null)
+            {
+                return HttpNotFound();
+            }
+            var items = new List<SelectListItem>()
+                    {
+                        new SelectListItem {Text = "Selecione", Value = "0"},
+                        new SelectListItem {Text = "Luxo", Value = "1"},
+                        new SelectListItem {Text = "Simples", Value = "2"}
+                    };
+
+            ViewBag.tipo = items;
+            return View(tb_acomodacao);
+        }
+
+        // POST: Acomodacao/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "codigo,descricao,tipo,preco_diaria,numeracao,qtd_pessoas_adultas,qtd_criancas")] tb_acomodacao tb_acomodacao)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(tb_acomodacao).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(tb_acomodacao);
+        }
+
+        // GET: Acomodacao/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tb_acomodacao tb_acomodacao = db.tb_acomodacao.Find(id);
+            if (tb_acomodacao == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tb_acomodacao);
+        }
+
+        // POST: Acomodacao/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            tb_acomodacao tb_acomodacao = db.tb_acomodacao.Find(id);
+            db.tb_acomodacao.Remove(tb_acomodacao);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+    }
+}

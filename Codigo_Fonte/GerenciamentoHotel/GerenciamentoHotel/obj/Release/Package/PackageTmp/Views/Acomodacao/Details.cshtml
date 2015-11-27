@@ -1,0 +1,80 @@
+﻿@model GerenciamentoHotel.Models.tb_acomodacao
+
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Views/Shared/_LayoutNovo.cshtml";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Acomodação</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo)
+        </dt>
+
+        <dd>
+            @if (Model.tipo == 1)
+            {
+                <span>Luxo</span>
+            }
+            else
+            {
+                <span>Simples</span>
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.preco_diaria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.preco_diaria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numeracao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numeracao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.qtd_pessoas_adultas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.qtd_pessoas_adultas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.qtd_criancas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.qtd_criancas)
+        </dd>
+
+    </dl>
+</div>
+
+
+
+<p>
+    <a href="@Url.Action("Edit", "Acomodacao", new { id = Model.codigo })" title="Editar"><span class="btn btn-default fa fa-pencil">Editar</span></a>&nbsp;
+    <a href="@Url.Action("Index", "Acomodacao")" title="Voltar"><span class="btn btn-default fa fa-arrow-left">Voltar</span></a>
+    <a href="@Url.Action("Index", "Home")" title="Voltar"><span class="btn btn-default fa fa-home">Ir para Home</span></a>
+</p>
+
+<br/>

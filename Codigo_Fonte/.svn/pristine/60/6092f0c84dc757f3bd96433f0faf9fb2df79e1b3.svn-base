@@ -1,0 +1,136 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
+using System.Net;
+using System.Web;
+using System.Web.Mvc;
+using GerenciamentoHotel.Models;
+
+namespace GerenciamentoHotel.Controllers
+{
+    public class ReservaController : Controller
+    {
+        private gerenciamento_hotelEntities db = new gerenciamento_hotelEntities();
+
+        // GET: Reserva
+        public ActionResult Index()
+        {
+            var tb_reserva = db.tb_reserva.Include(t => t.tb_acomodacao).Include(t => t.tb_hospede);
+            return View(tb_reserva.ToList());
+        }
+
+        // GET: Reserva/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tb_reserva tb_reserva = db.tb_reserva.Find(id);
+            if (tb_reserva == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tb_reserva);
+        }
+
+        // GET: Reserva/Create
+        public ActionResult Create()
+        {
+            ViewBag.codigo_acomodacao = new SelectList(db.tb_acomodacao, "codigo", "descricao");
+            ViewBag.codigo_hospede = new SelectList(db.tb_hospede, "codigo", "nome");
+            return View();
+        }
+
+        // POST: Reserva/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "codigo,codigo_hospede,data_entrada,data_saida,codigo_acomodacao,qtd_adultos,qtd_criancas")] tb_reserva tb_reserva)
+        {
+            if (ModelState.IsValid)
+            {
+                db.tb_reserva.Add(tb_reserva);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.codigo_acomodacao = new SelectList(db.tb_acomodacao, "codigo", "descricao", tb_reserva.codigo_acomodacao);
+            ViewBag.codigo_hospede = new SelectList(db.tb_hospede, "codigo", "nome", tb_reserva.codigo_hospede);
+            return View(tb_reserva);
+        }
+
+        // GET: Reserva/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tb_reserva tb_reserva = db.tb_reserva.Find(id);
+            if (tb_reserva == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.codigo_acomodacao = new SelectList(db.tb_acomodacao, "codigo", "descricao", tb_reserva.codigo_acomodacao);
+            ViewBag.codigo_hospede = new SelectList(db.tb_hospede, "codigo", "nome", tb_reserva.codigo_hospede);
+            return View(tb_reserva);
+        }
+
+        // POST: Reserva/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "codigo,codigo_hospede,data_entrada,data_saida,codigo_acomodacao,qtd_adultos,qtd_criancas")] tb_reserva tb_reserva)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(tb_reserva).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.codigo_acomodacao = new SelectList(db.tb_acomodacao, "codigo", "descricao", tb_reserva.codigo_acomodacao);
+            ViewBag.codigo_hospede = new SelectList(db.tb_hospede, "codigo", "nome", tb_reserva.codigo_hospede);
+            return View(tb_reserva);
+        }
+
+        // GET: Reserva/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tb_reserva tb_reserva = db.tb_reserva.Find(id);
+            if (tb_reserva == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tb_reserva);
+        }
+
+        // POST: Reserva/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            tb_reserva tb_reserva = db.tb_reserva.Find(id);
+            db.tb_reserva.Remove(tb_reserva);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+    }
+}

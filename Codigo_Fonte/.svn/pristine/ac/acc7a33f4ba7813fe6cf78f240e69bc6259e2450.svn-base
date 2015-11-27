@@ -1,0 +1,82 @@
+﻿@model IEnumerable<GerenciamentoHotel.Models.tb_checkout>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Criar Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.data_saida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hora_saida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numero_diarias)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.valor_diária)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.valor_telefonemas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.valor_consumo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.valor_total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.forma_pagamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_checkin.hora_entrada)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.data_saida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hora_saida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numero_diarias)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.valor_diária)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.valor_telefonemas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.valor_consumo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.valor_total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.forma_pagamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_checkin.hora_entrada)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.codigo }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.codigo }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.codigo })
+            @Html.ActionLink("Comprovante Consumo", "ImprimirConsumo", new { id = item.codigo })
+        </td>
+    </tr>
+}
+
+</table>

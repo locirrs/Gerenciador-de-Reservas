@@ -1,0 +1,81 @@
+﻿@model IEnumerable<GerenciamentoHotel.Models.tb_checkin>
+
+@{
+    ViewBag.Title = "Checkin";
+}
+
+<h2>Checkin</h2>
+
+<p>
+    @Html.ActionLink("Criar Novo Checkin", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.data_entrada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hora_entrada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_saida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hora_saida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.valor_diaria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_acomodacao.descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_funcionario.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_hospede.nome)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.data_entrada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hora_entrada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.data_saida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hora_saida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.valor_diaria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_acomodacao.descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_funcionario.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_hospede.nome)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.codigo }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.codigo }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.codigo })
+        </td>
+    </tr>
+}
+
+</table>

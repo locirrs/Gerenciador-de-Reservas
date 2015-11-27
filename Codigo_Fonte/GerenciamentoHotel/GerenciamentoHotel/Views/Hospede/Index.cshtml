@@ -1,0 +1,96 @@
+﻿@model IEnumerable<GerenciamentoHotel.Models.tb_hospede>
+
+@{
+    ViewBag.Title = "Gerenciamento de Hóspede";
+    Layout = "~/Views/Shared/_LayoutNovo.cshtml";
+}
+
+<h2>Gerenciamento de Hóspede</h2>
+
+<p>
+    <a href="@Url.Action("Create", "Hospede")" title="Editar"><span class="btn btn-default fa fa-plus-circle">Novo Hóspede</span></a>
+    <a href="@Url.Action("Index", "Home")" title="Voltar"><span class="btn btn-default fa fa-home">Ir para Home</span></a>
+</p>
+<br/>
+@if (Model.ToList().Count > 0) {
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.endereco)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.documento_identificacao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.tipo_documento_identificacao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.data_nascimento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.nome_pai_mae)
+                </th>
+                <th style="width:10%;"></th>
+            </tr>
+
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.endereco)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.documento_identificacao)
+                    </td>
+                    <td>
+                        @if (item.tipo_documento_identificacao.HasValue)
+            {
+                if (item.tipo_documento_identificacao.Value == 1)
+                {
+                    @Html.Label("CPF", new {@style = "font-weight:normal"})
+
+                }
+                else
+                {
+                    @Html.Label("RG", new {@style = "font-weight:normal"})
+
+                }
+            }
+            else
+            {
+                            @Html.Label("", new { @style = "font-weight:normal" })
+            }
+                    </td>
+                    <td>
+                        @item.data_nascimento.Value.ToString("dd/MM/yyyy")
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nome_pai_mae)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Hospede", new { id = item.codigo })" title="Editar"><i class="fa fa-pencil-square-o"></i></a>
+                        <a href="@Url.Action("Details", "Hospede", new { id = item.codigo })" title="Detalhes"><i class="fa fa-ellipsis-h"></i></a>
+                        <a href="@Url.Action("Delete", "Hospede", new { id = item.codigo })" title="Excluir"><i class="fa fa-eraser"></i></a>
+                    </td>
+                </tr>
+}
+
+        </table>
+        </div>
+        }
+        else
+        {
+        <div class="alert alert-info"><strong>Aviso:</strong>Nenhum hóspede encontrado!</div>
+        }

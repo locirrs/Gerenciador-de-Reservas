@@ -1,0 +1,80 @@
+﻿@model GerenciamentoHotel.Models.tb_hospede
+
+@{
+    ViewBag.Title = "Exclusão de Hóspedes";
+}
+
+<h2>Excluir Hóspede</h2>
+
+<h3>Você realmente deseja excluir este Hóspede?</h3>
+<div>
+    <h4>Hóspede</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.endereco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.endereco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.documento_identificacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.documento_identificacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo_documento_identificacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_documento_identificacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_nascimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_nascimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nome_pai_mae)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome_pai_mae)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar para Lista", "Index")
+        </div>
+    }
+</div>

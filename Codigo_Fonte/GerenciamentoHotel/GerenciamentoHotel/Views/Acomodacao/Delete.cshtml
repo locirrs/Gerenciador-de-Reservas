@@ -1,0 +1,86 @@
+﻿@model GerenciamentoHotel.Models.tb_acomodacao
+
+@{
+    ViewBag.Title = "Deletar Acomodação";
+    Layout = "~/Views/Shared/_LayoutNovo.cshtml";
+}
+
+<h2>Acomodação</h2>
+
+<h3>Você gostaria de deletar a acomodação?</h3>
+<div>
+    <h4>Acomodação</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo)
+        </dt>
+
+        <dd>
+            @if (Model.tipo == 1)
+            {
+                <span>Luxo</span>
+            }
+            else
+            {
+                <span>Simples</span>
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.preco_diaria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.preco_diaria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numeracao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numeracao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.qtd_pessoas_adultas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.qtd_pessoas_adultas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.qtd_criancas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.qtd_criancas)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <button type="submit" class="btn btn-default">
+                <span class="fa fa-eraser"></span>Excluir
+            </button>
+            &nbsp;
+            <a href="@Url.Action("Index", "Acomodacao")" title="Voltar"><span class="btn btn-default fa fa-arrow-left">Voltar</span></a>
+            <a href="@Url.Action("Index", "Home")" title="Voltar"><span class="btn btn-default fa fa-home">Ir para Home</span></a>
+        </div>
+        <br/>
+    }
+</div>

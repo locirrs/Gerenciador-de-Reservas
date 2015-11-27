@@ -1,0 +1,245 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
+using System.Net;
+using System.Web;
+using System.Web.Mvc;
+using GerenciamentoHotel.ListaHospedeTableAdapters;
+using GerenciamentoHotel.Models;
+using Microsoft.Reporting.WebForms;
+
+namespace GerenciamentoHotel.Controllers
+{
+    public class CheckinController : Controller
+    {
+        private gerenciamento_hotelEntities db = new gerenciamento_hotelEntities();
+
+        // GET: Checkin
+        public ActionResult Index()
+        {
+            var tb_checkin = db.tb_checkin.Include(t => t.tb_acomodacao).Include(t => t.tb_funcionario).Include(t => t.tb_hospede);
+            return View(tb_checkin.ToList());
+        }
+
+
+        public ActionResult RelatorioListaHospede()
+        {
+            try
+            {
+                ReportViewer relatorio = new ReportViewer();
+                relatorio.ProcessingMode = ProcessingMode.Local;
+                relatorio.LocalReport.ReportPath = Server.MapPath("~\\Relatorios\\ListaHospedeReport.rdlc");
+                relatorio.LocalReport.Refresh();
+
+                var dataTableProjetos = new ListaHospedeTableAdapter();
+                var dataSetProjetos = new ListaHospede.ListaHospedeDataTable();
+
+                dataTableProjetos.Fill(dataSetProjetos);
+
+                var listaProjetos = dataSetProjetos.Select();
+                var dtsProjetos = new ReportDataSource("DataSet1", listaProjetos);
+                relatorio.LocalReport.DataSources.Add(dtsProjetos);
+
+                relatorio.ShowPrintButton = true;
+                relatorio.LocalReport.Refresh();
+
+                string reportType = "PDF";
+                string mimeType;
+                string encoding;
+                string fileNameExtension;
+
+                string deviceInfo =
+                    "<DeviceInfo>" +
+                    " <OutputFormat>PDF</OutputFormat>" +
+                    " <PageWidth>9in</PageWidth>" +
+                    " <PageHeight>12in</PageHeight>" +
+                    " <MarginTop>0.2in</MarginTop>" +
+                    " <MarginLeft>.7in</MarginLeft>" +
+                    " <MarginRight>.8in</MarginRight>" +
+                    " <MarginBottom>0.2in</MarginBottom>" +
+                    "</DeviceInfo>";
+
+                Warning[] warnings;
+                string[] streams;
+                byte[] bytes;
+
+                //Renderiza o relatório em bytes
+                bytes = relatorio.LocalReport.Render(
+                reportType,
+                deviceInfo,
+                out mimeType,
+                out encoding,
+                out fileNameExtension,
+                out streams,
+                out warnings);
+
+                return File(bytes, mimeType);
+            }
+
+            catch (Exception ex)
+            {
+
+                return null;
+            }
+
+        }
+
+        // GET: Checkin/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tb_checkin tb_checkin = db.tb_checkin.Find(id);
+            if (tb_checkin == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tb_checkin);
+        }
+
+        // GET: Checkin/Create
+        public ActionResult Create()
+        {
+            ViewBag.codigo_acomodacao = new SelectList(db.tb_acomodacao, "codigo", "descricao");
+            ViewBag.codigo_funcionario = new SelectList(db.tb_funcionario, "codigo", "nome");
+            ViewBag.codigo_hospede = new SelectList(db.tb_hospede, "codigo", "nome");
+
+            var status = new List<SelectListItem>()
+                    {
+                        new SelectListItem {Text = "Selecione", Value = "0"},
+                        new SelectListItem {Text = "Em Andamento", Value = "1"},
+                        new SelectListItem {Text = "Finalizada", Value = "2"},
+                        new SelectListItem {Text = "Não Realizada", Value = "3"}
+                    };
+
+            ViewBag.status = status;
+
+            return View();
+        }
+
+        // POST: Checkin/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "codigo,data_entrada,hora_entrada,data_saida,hora_saida,codigo_hospede,codigo_acomodacao,valor_diaria,codigo_funcionario,status")] tb_checkin tb_checkin)
+        {
+            if (ModelState.IsValid)
+            {
+                db.tb_checkin.Add(tb_checkin);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.codigo_acomodacao = new SelectList(db.tb_acomodacao, "codigo", "descricao", tb_checkin.codigo_acomodacao);
+            ViewBag.codigo_funcionario = new SelectList(db.tb_funcionario, "codigo", "nome", tb_checkin.codigo_funcionario);
+            ViewBag.codigo_hospede = new SelectList(db.tb_hospede, "codigo", "nome", tb_checkin.codigo_hospede);
+            var status = new List<SelectListItem>()
+                    {
+                        new SelectListItem {Text = "Selecione", Value = "0"},
+                        new SelectListItem {Text = "Em Andamento", Value = "1"},
+                        new SelectListItem {Text = "Finalizada", Value = "2"},
+                        new SelectListItem {Text = "Não Realizada", Value = "3"}
+                    };
+
+            ViewBag.status = status;
+            return View(tb_checkin);
+        }
+
+        // GET: Checkin/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tb_checkin tb_checkin = db.tb_checkin.Find(id);
+            if (tb_checkin == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.codigo_acomodacao = new SelectList(db.tb_acomodacao, "codigo", "descricao", tb_checkin.codigo_acomodacao);
+            ViewBag.codigo_funcionario = new SelectList(db.tb_funcionario, "codigo", "nome", tb_checkin.codigo_funcionario);
+            ViewBag.codigo_hospede = new SelectList(db.tb_hospede, "codigo", "nome", tb_checkin.codigo_hospede);
+            var status = new List<SelectListItem>()
+                    {
+                        new SelectListItem {Text = "Selecione", Value = "0"},
+                        new SelectListItem {Text = "Em Andamento", Value = "1"},
+                        new SelectListItem {Text = "Finalizada", Value = "2"},
+                        new SelectListItem {Text = "Não Realizada", Value = "3"}
+                    };
+
+            ViewBag.status = status;
+            
+            return View(tb_checkin);
+        }
+
+        // POST: Checkin/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "codigo,data_entrada,hora_entrada,data_saida,hora_saida,codigo_hospede,codigo_acomodacao,valor_diaria,codigo_funcionario,status")] tb_checkin tb_checkin)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(tb_checkin).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            var status = new List<SelectListItem>()
+                    {
+                        new SelectListItem {Text = "Selecione", Value = "0"},
+                        new SelectListItem {Text = "Em Andamento", Value = "1"},
+                        new SelectListItem {Text = "Finalizada", Value = "2"},
+                        new SelectListItem {Text = "Não Realizada", Value = "3"}
+                    };
+
+            ViewBag.status = status;
+            ViewBag.codigo_acomodacao = new SelectList(db.tb_acomodacao, "codigo", "descricao", tb_checkin.codigo_acomodacao);
+            ViewBag.codigo_funcionario = new SelectList(db.tb_funcionario, "codigo", "nome", tb_checkin.codigo_funcionario);
+            ViewBag.codigo_hospede = new SelectList(db.tb_hospede, "codigo", "nome", tb_checkin.codigo_hospede);
+            return View(tb_checkin);
+        }
+
+        // GET: Checkin/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tb_checkin tb_checkin = db.tb_checkin.Find(id);
+            if (tb_checkin == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tb_checkin);
+        }
+
+        // POST: Checkin/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            tb_checkin tb_checkin = db.tb_checkin.Find(id);
+            db.tb_checkin.Remove(tb_checkin);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+    }
+}

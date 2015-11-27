@@ -1,0 +1,66 @@
+﻿@model GerenciamentoHotel.Models.tb_consumo
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Consumo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.data_consumo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_consumo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.quantidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valor_unitario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valor_unitario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valor_final)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valor_final)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_checkin.hora_entrada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_checkin.hora_entrada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_itens_consumo.descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_itens_consumo.descricao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.codigo }) |
+    @Html.ActionLink("Voltar para Lista", "Index")
+</p>

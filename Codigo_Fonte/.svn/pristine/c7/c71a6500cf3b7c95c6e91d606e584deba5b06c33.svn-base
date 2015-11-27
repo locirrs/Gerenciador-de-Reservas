@@ -1,0 +1,132 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
+using System.Net;
+using System.Web;
+using System.Web.Mvc;
+using GerenciamentoHotel.Models;
+
+namespace GerenciamentoHotel.Controllers
+{
+    public class CheckoutController : Controller
+    {
+        private gerenciamento_hotelEntities db = new gerenciamento_hotelEntities();
+
+        // GET: Checkout
+        public ActionResult Index()
+        {
+            var tb_checkout = db.tb_checkout.Include(t => t.tb_checkin);
+            return View(tb_checkout.ToList());
+        }
+
+        // GET: Checkout/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tb_checkout tb_checkout = db.tb_checkout.Find(id);
+            if (tb_checkout == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tb_checkout);
+        }
+
+        // GET: Checkout/Create
+        public ActionResult Create()
+        {
+            ViewBag.codigo_checkin = new SelectList(db.tb_checkin.Where(x => x.status == 1).Include("tb_hospede"), "codigo", "tb_hospede.nome"); 
+            return View();
+        }
+
+        // POST: Checkout/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "codigo,codigo_checkin,data_saida,hora_saida,numero_diarias,valor_diária,valor_telefonemas,valor_consumo,valor_total,forma_pagamento")] tb_checkout tb_checkout)
+        {
+            if (ModelState.IsValid)
+            {
+                db.tb_checkout.Add(tb_checkout);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.codigo_checkin = new SelectList(db.tb_checkin.Where(x => x.status == 1).Include("tb_hospede"), "codigo", "tb_hospede.nome"); 
+            return View(tb_checkout);
+        }
+
+        // GET: Checkout/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tb_checkout tb_checkout = db.tb_checkout.Find(id);
+            if (tb_checkout == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.codigo_checkin = new SelectList(db.tb_checkin.Where(x => x.status == 1).Include("tb_hospede"), "codigo", "tb_hospede.nome"); 
+            return View(tb_checkout);
+        }
+
+        // POST: Checkout/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "codigo,codigo_checkin,data_saida,hora_saida,numero_diarias,valor_diária,valor_telefonemas,valor_consumo,valor_total,forma_pagamento")] tb_checkout tb_checkout)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(tb_checkout).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.codigo_checkin = new SelectList(db.tb_checkin, "codigo", "hora_entrada", tb_checkout.codigo_checkin);
+            return View(tb_checkout);
+        }
+
+        // GET: Checkout/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tb_checkout tb_checkout = db.tb_checkout.Find(id);
+            if (tb_checkout == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tb_checkout);
+        }
+
+        // POST: Checkout/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            tb_checkout tb_checkout = db.tb_checkout.Find(id);
+            db.tb_checkout.Remove(tb_checkout);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+    }
+}

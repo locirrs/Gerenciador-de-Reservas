@@ -1,0 +1,35 @@
+﻿@model GerenciamentoHotel.Models.tb_hospede_checkin
+
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>tb_hospede_checkin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_checkin.hora_entrada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_checkin.hora_entrada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_hospede.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_hospede.nome)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.codigo }) |
+    @Html.ActionLink("Voltar para Lista", "Index")
+</p>

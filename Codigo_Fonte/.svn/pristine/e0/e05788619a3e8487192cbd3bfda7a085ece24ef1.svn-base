@@ -1,0 +1,251 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
+using System.Net;
+using System.Web;
+using System.Web.Mvc;
+using GerenciamentoHotel.CheckoutTableAdapters;
+using GerenciamentoHotel.Filters;
+using GerenciamentoHotel.ListaConsumoTableAdapters;
+using GerenciamentoHotel.ListaHospedeTableAdapters;
+using GerenciamentoHotel.Models;
+using Microsoft.Reporting.WebForms;
+using Timesheet.Filters;
+
+namespace GerenciamentoHotel.Controllers
+{
+    [Authenticated]
+    [Permission]
+    public class CheckoutController : Controller
+    {
+        private gerenciamento_hotelEntities db = new gerenciamento_hotelEntities();
+
+        // GET: Checkout
+        public ActionResult Index()
+        {
+            var tb_checkout = db.tb_checkout.Include(t => t.tb_checkin);
+            return View(tb_checkout.ToList());
+        }
+
+        // GET: Checkout/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tb_checkout tb_checkout = db.tb_checkout.Find(id);
+            if (tb_checkout == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tb_checkout);
+        }
+
+        // GET: Checkout/Create
+        public ActionResult Create()
+        {
+            ViewBag.codigo_checkin = new SelectList(db.tb_checkin.Where(x => x.status == 1).Include("tb_hospede"), "codigo", "tb_hospede.nome");
+            var formaPagamento = new List<SelectListItem>()
+                    {
+                        new SelectListItem {Text = "Selecione", Value = "0"},
+                        new SelectListItem {Text = "Cartão", Value = "1"},
+                        new SelectListItem {Text = "Dinhieiro", Value = "2"}
+                    };
+
+            ViewBag.formaPagamento = formaPagamento;
+            return View();
+        }
+
+        // POST: Checkout/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "codigo,codigo_checkin,data_saida,hora_saida,numero_diarias,valor_diária,valor_telefonemas,valor_consumo,valor_total,forma_pagamento")] tb_checkout tb_checkout)
+        {
+            if (ModelState.IsValid)
+            {
+
+                tb_checkin tb_checkin = db.tb_checkin.FirstOrDefault(x => x.codigo == tb_checkout.codigo_checkin);
+                tb_checkin.status = 2;
+                db.Entry(tb_checkin).State = EntityState.Modified;
+
+                db.tb_checkout.Add(tb_checkout);
+                db.SaveChanges();
+                var formaPagamento = new List<SelectListItem>()
+                    {
+                        new SelectListItem {Text = "Selecione", Value = "0"},
+                        new SelectListItem {Text = "Cartão", Value = "1"},
+                        new SelectListItem {Text = "Dinhieiro", Value = "2"}
+                    };
+
+                ViewBag.formaPagamento = formaPagamento;
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.codigo_checkin = new SelectList(db.tb_checkin.Where(x => x.status == 1).Include("tb_hospede"), "codigo", "tb_hospede.nome"); 
+            return View(tb_checkout);
+        }
+
+        // GET: Checkout/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tb_checkout tb_checkout = db.tb_checkout.Find(id);
+            if (tb_checkout == null)
+            {
+                return HttpNotFound();
+            }
+            var formaPagamento = new List<SelectListItem>()
+                    {
+                        new SelectListItem {Text = "Selecione", Value = "0"},
+                        new SelectListItem {Text = "Cartão", Value = "1"},
+                        new SelectListItem {Text = "Dinhieiro", Value = "2"}
+                    };
+
+            ViewBag.formaPagamento = formaPagamento;
+            ViewBag.codigo_checkin = new SelectList(db.tb_checkin.Where(x => x.status == 1).Include("tb_hospede"), "codigo", "tb_hospede.nome"); 
+            return View(tb_checkout);
+        }
+
+        // POST: Checkout/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "codigo,codigo_checkin,data_saida,hora_saida,numero_diarias,valor_diária,valor_telefonemas,valor_consumo,valor_total,forma_pagamento")] tb_checkout tb_checkout)
+        {
+            if (ModelState.IsValid)
+            {
+                tb_checkin tb_checkin = db.tb_checkin.FirstOrDefault(x => x.codigo == tb_checkout.codigo_checkin);
+                tb_checkin.status = 2;
+                db.Entry(tb_checkin).State = EntityState.Modified;
+
+                tb_checkout.tb_checkin = tb_checkin;
+
+                db.Entry(tb_checkout).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            var formaPagamento = new List<SelectListItem>()
+                    {
+                        new SelectListItem {Text = "Selecione", Value = "0"},
+                        new SelectListItem {Text = "Cartão", Value = "1"},
+                        new SelectListItem {Text = "Dinhieiro", Value = "2"}
+                    };
+
+            ViewBag.formaPagamento = formaPagamento;
+            ViewBag.codigo_checkin = new SelectList(db.tb_checkin, "codigo", "hora_entrada", tb_checkout.codigo_checkin);
+            return View(tb_checkout);
+        }
+
+        // GET: Checkout/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tb_checkout tb_checkout = db.tb_checkout.Find(id);
+            if (tb_checkout == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tb_checkout);
+        }
+
+        public ActionResult ImprimirConsumo(int? id)
+        {
+            tb_checkout tb_checkout = db.tb_checkout.Find(id);
+
+            ReportViewer relatorio = new ReportViewer();
+            relatorio.ProcessingMode = ProcessingMode.Local;
+            relatorio.LocalReport.ReportPath = Server.MapPath("~\\Relatorios\\ListaConsumo.rdlc");
+            relatorio.LocalReport.Refresh();
+
+            var dataTableProjetos = new tb_checkoutTableAdapter();
+            var dataSetProjetos = new Checkout.tb_checkoutDataTable();
+
+            dataTableProjetos.Fill(dataSetProjetos);
+
+            var listaProjetos = dataSetProjetos.Select("codigo=" + id);
+            var dtsProjetos = new ReportDataSource("DataSet1", listaProjetos);
+
+
+            var dataTableConsumo = new ListaConsumoTableAdapter();
+            var dataSetConsumo = new ListaConsumo.ListaConsumoDataTable();
+
+            dataTableConsumo.Fill(dataSetConsumo);
+
+            var listaConsumo = dataSetConsumo.Select("codigo_checkin=" + tb_checkout.codigo_checkin);
+            var dtsConsumo = new ReportDataSource("DataSet2", listaConsumo);
+
+            relatorio.LocalReport.DataSources.Add(dtsProjetos);
+            relatorio.LocalReport.DataSources.Add(dtsConsumo);
+
+
+            relatorio.ShowPrintButton = true;
+            relatorio.LocalReport.Refresh();
+
+            string reportType = "PDF";
+            string mimeType;
+            string encoding;
+            string fileNameExtension;
+
+            string deviceInfo =
+                "<DeviceInfo>" +
+                " <OutputFormat>PDF</OutputFormat>" +
+                " <PageWidth>9in</PageWidth>" +
+                " <PageHeight>12in</PageHeight>" +
+                " <MarginTop>0.2in</MarginTop>" +
+                " <MarginLeft>.7in</MarginLeft>" +
+                " <MarginRight>.8in</MarginRight>" +
+                " <MarginBottom>0.2in</MarginBottom>" +
+                "</DeviceInfo>";
+
+            Warning[] warnings;
+            string[] streams;
+            byte[] bytes;
+
+            //Renderiza o relatório em bytes
+            bytes = relatorio.LocalReport.Render(
+            reportType,
+            deviceInfo,
+            out mimeType,
+            out encoding,
+            out fileNameExtension,
+            out streams,
+            out warnings);
+
+            return File(bytes, mimeType);
+        }
+
+        
+
+        // POST: Checkout/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            tb_checkout tb_checkout = db.tb_checkout.Find(id);
+            db.tb_checkout.Remove(tb_checkout);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+    }
+}

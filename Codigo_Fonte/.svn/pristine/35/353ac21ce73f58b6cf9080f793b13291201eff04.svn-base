@@ -1,0 +1,40 @@
+﻿@model GerenciamentoHotel.Models.tb_itens_consumo
+
+@{
+    ViewBag.Title = "Deletar Itens de Consumo";
+}
+
+<h2>Deletar Itens de Consumo</h2>
+
+<h3>Você gostraia realmente de excluir este item?</h3>
+<div>
+    <h4>Itens de Consumo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valor)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Deletar" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar para Lista", "Index")
+        </div>
+    }
+</div>

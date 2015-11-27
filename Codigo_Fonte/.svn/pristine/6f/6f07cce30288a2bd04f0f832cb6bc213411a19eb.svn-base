@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="gerenciamento_hotelModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tb_acomodacao">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descricao" Type="varchar" MaxLength="45" />
+    <Property Name="tipo" Type="smallint" />
+    <Property Name="preco_diaria" Type="varchar" MaxLength="45" />
+    <Property Name="numeracao" Type="varchar" MaxLength="15" />
+    <Property Name="qtd_pessoas_adultas" Type="int" />
+    <Property Name="qtd_criancas" Type="int" />
+  </EntityType>
+  <EntityType Name="tb_checkin">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="data_entrada" Type="date" />
+    <Property Name="hora_entrada" Type="varchar" MaxLength="45" />
+    <Property Name="data_saida" Type="date" />
+    <Property Name="hora_saida" Type="varchar" MaxLength="45" />
+    <Property Name="codigo_hospede" Type="int" Nullable="false" />
+    <Property Name="codigo_acomodacao" Type="int" Nullable="false" />
+    <Property Name="valor_diaria" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="codigo_funcionario" Type="int" Nullable="false" />
+    <Property Name="status" Type="smallint" />
+  </EntityType>
+  <EntityType Name="tb_checkout">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo_checkin" Type="int" Nullable="false" />
+    <Property Name="data_saida" Type="date" />
+    <Property Name="hora_saida" Type="varchar" MaxLength="45" />
+    <Property Name="numero_diarias" Type="int" />
+    <Property Name="valor_diária" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="valor_telefonemas" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="valor_consumo" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="valor_total" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="forma_pagamento" Type="smallint" />
+  </EntityType>
+  <EntityType Name="tb_consumo">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="data_consumo" Type="varchar" MaxLength="45" />
+    <Property Name="codigo_checkin" Type="int" Nullable="false" />
+    <Property Name="codigo_item_consumo" Type="int" Nullable="false" />
+    <Property Name="quantidade" Type="int" />
+    <Property Name="valor_unitario" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="valor_final" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="tb_funcionario">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="100" />
+    <Property Name="endereco" Type="varchar" MaxLength="100" />
+    <Property Name="telefone" Type="varchar" MaxLength="45" />
+    <Property Name="documento_identificacao" Type="varchar" MaxLength="45" />
+    <Property Name="tipo_documento_identificacao" Type="smallint" />
+    <Property Name="data_nascimento" Type="date" />
+    <Property Name="tipo_usuario" Type="int" />
+    <Property Name="senha" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="tb_hospede">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="100" />
+    <Property Name="endereco" Type="varchar" MaxLength="100" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
+    <Property Name="documento_identificacao" Type="varchar" MaxLength="45" />
+    <Property Name="tipo_documento_identificacao" Type="smallint" />
+    <Property Name="data_nascimento" Type="date" />
+    <Property Name="nome_pai_mae" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tb_hospede_checkin">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo_checkin" Type="int" Nullable="false" />
+    <Property Name="codigo_hospede" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_itens_consumo">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descricao" Type="varchar" MaxLength="45" />
+    <Property Name="valor" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="tb_reserva">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo_hospede" Type="int" Nullable="false" />
+    <Property Name="data_entrada" Type="date" />
+    <Property Name="data_saida" Type="date" />
+    <Property Name="codigo_acomodacao" Type="int" Nullable="false" />
+    <Property Name="qtd_adultos" Type="int" />
+    <Property Name="qtd_criancas" Type="int" />
+  </EntityType>
+  <Association Name="fk_tb_checkin_tb_acomodacao">
+    <End Role="tb_acomodacao" Type="Self.tb_acomodacao" Multiplicity="1" />
+    <End Role="tb_checkin" Type="Self.tb_checkin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_acomodacao">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="tb_checkin">
+        <PropertyRef Name="codigo_acomodacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_checkin_tb_funcionario">
+    <End Role="tb_funcionario" Type="Self.tb_funcionario" Multiplicity="1" />
+    <End Role="tb_checkin" Type="Self.tb_checkin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_funcionario">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="tb_checkin">
+        <PropertyRef Name="codigo_funcionario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_checkin_tb_hospede">
+    <End Role="tb_hospede" Type="Self.tb_hospede" Multiplicity="1" />
+    <End Role="tb_checkin" Type="Self.tb_checkin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_hospede">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="tb_checkin">
+        <PropertyRef Name="codigo_hospede" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_checkout_tb_checkin">
+    <End Role="tb_checkin" Type="Self.tb_checkin" Multiplicity="1" />
+    <End Role="tb_checkout" Type="Self.tb_checkout" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_checkin">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="tb_checkout">
+        <PropertyRef Name="codigo_checkin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_consumo_tb_checkin">
+    <End Role="tb_checkin" Type="Self.tb_checkin" Multiplicity="1" />
+    <End Role="tb_consumo" Type="Self.tb_consumo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_checkin">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="tb_consumo">
+        <PropertyRef Name="codigo_checkin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_consumo_tb_item_consumo">
+    <End Role="tb_itens_consumo" Type="Self.tb_itens_consumo" Multiplicity="1" />
+    <End Role="tb_consumo" Type="Self.tb_consumo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_itens_consumo">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="tb_consumo">
+        <PropertyRef Name="codigo_item_consumo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_hospede_checkin_tb_checkin">
+    <End Role="tb_checkin" Type="Self.tb_checkin" Multiplicity="1" />
+    <End Role="tb_hospede_checkin" Type="Self.tb_hospede_checkin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_checkin">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="tb_hospede_checkin">
+        <PropertyRef Name="codigo_checkin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_hospede_checkin_tb_hospede">
+    <End Role="tb_hospede" Type="Self.tb_hospede" Multiplicity="1" />
+    <End Role="tb_hospede_checkin" Type="Self.tb_hospede_checkin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_hospede">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="tb_hospede_checkin">
+        <PropertyRef Name="codigo_hospede" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_reserva_tb_acomodacao">
+    <End Role="tb_acomodacao" Type="Self.tb_acomodacao" Multiplicity="1" />
+    <End Role="tb_reserva" Type="Self.tb_reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_acomodacao">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="tb_reserva">
+        <PropertyRef Name="codigo_acomodacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_reserva_tb_hospede">
+    <End Role="tb_hospede" Type="Self.tb_hospede" Multiplicity="1" />
+    <End Role="tb_reserva" Type="Self.tb_reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_hospede">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="tb_reserva">
+        <PropertyRef Name="codigo_hospede" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="gerenciamento_hotelModelStoreContainer">
+    <EntitySet Name="tb_acomodacao" EntityType="Self.tb_acomodacao" Schema="gerenciamento_hotel" store:Type="Tables" />
+    <EntitySet Name="tb_checkin" EntityType="Self.tb_checkin" Schema="gerenciamento_hotel" store:Type="Tables" />
+    <EntitySet Name="tb_checkout" EntityType="Self.tb_checkout" Schema="gerenciamento_hotel" store:Type="Tables" />
+    <EntitySet Name="tb_consumo" EntityType="Self.tb_consumo" Schema="gerenciamento_hotel" store:Type="Tables" />
+    <EntitySet Name="tb_funcionario" EntityType="Self.tb_funcionario" Schema="gerenciamento_hotel" store:Type="Tables" />
+    <EntitySet Name="tb_hospede" EntityType="Self.tb_hospede" Schema="gerenciamento_hotel" store:Type="Tables" />
+    <EntitySet Name="tb_hospede_checkin" EntityType="Self.tb_hospede_checkin" Schema="gerenciamento_hotel" store:Type="Tables" />
+    <EntitySet Name="tb_itens_consumo" EntityType="Self.tb_itens_consumo" Schema="gerenciamento_hotel" store:Type="Tables" />
+    <EntitySet Name="tb_reserva" EntityType="Self.tb_reserva" Schema="gerenciamento_hotel" store:Type="Tables" />
+    <AssociationSet Name="fk_tb_checkin_tb_acomodacao" Association="Self.fk_tb_checkin_tb_acomodacao">
+      <End Role="tb_acomodacao" EntitySet="tb_acomodacao" />
+      <End Role="tb_checkin" EntitySet="tb_checkin" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_checkin_tb_funcionario" Association="Self.fk_tb_checkin_tb_funcionario">
+      <End Role="tb_funcionario" EntitySet="tb_funcionario" />
+      <End Role="tb_checkin" EntitySet="tb_checkin" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_checkin_tb_hospede" Association="Self.fk_tb_checkin_tb_hospede">
+      <End Role="tb_hospede" EntitySet="tb_hospede" />
+      <End Role="tb_checkin" EntitySet="tb_checkin" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_checkout_tb_checkin" Association="Self.fk_tb_checkout_tb_checkin">
+      <End Role="tb_checkin" EntitySet="tb_checkin" />
+      <End Role="tb_checkout" EntitySet="tb_checkout" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_consumo_tb_checkin" Association="Self.fk_tb_consumo_tb_checkin">
+      <End Role="tb_checkin" EntitySet="tb_checkin" />
+      <End Role="tb_consumo" EntitySet="tb_consumo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_consumo_tb_item_consumo" Association="Self.fk_tb_consumo_tb_item_consumo">
+      <End Role="tb_itens_consumo" EntitySet="tb_itens_consumo" />
+      <End Role="tb_consumo" EntitySet="tb_consumo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_hospede_checkin_tb_checkin" Association="Self.fk_tb_hospede_checkin_tb_checkin">
+      <End Role="tb_checkin" EntitySet="tb_checkin" />
+      <End Role="tb_hospede_checkin" EntitySet="tb_hospede_checkin" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_hospede_checkin_tb_hospede" Association="Self.fk_tb_hospede_checkin_tb_hospede">
+      <End Role="tb_hospede" EntitySet="tb_hospede" />
+      <End Role="tb_hospede_checkin" EntitySet="tb_hospede_checkin" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_reserva_tb_acomodacao" Association="Self.fk_tb_reserva_tb_acomodacao">
+      <End Role="tb_acomodacao" EntitySet="tb_acomodacao" />
+      <End Role="tb_reserva" EntitySet="tb_reserva" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_reserva_tb_hospede" Association="Self.fk_tb_reserva_tb_hospede">
+      <End Role="tb_hospede" EntitySet="tb_hospede" />
+      <End Role="tb_reserva" EntitySet="tb_reserva" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

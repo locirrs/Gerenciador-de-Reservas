@@ -1,0 +1,40 @@
+﻿@model GerenciamentoHotel.Models.tb_hospede_checkin
+
+@{
+    ViewBag.Title = "Deletar Hóspede";
+}
+
+<h2>Deletar Hóspede</h2>
+
+<h3>~Você quer realmente excluir este Hóspede no Checkin?</h3>
+<div>
+    <h4>Hóspede no Checkin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_checkin.hora_entrada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_checkin.hora_entrada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_hospede.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_hospede.nome)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Deletar" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar para Lista", "Index")
+        </div>
+    }
+</div>

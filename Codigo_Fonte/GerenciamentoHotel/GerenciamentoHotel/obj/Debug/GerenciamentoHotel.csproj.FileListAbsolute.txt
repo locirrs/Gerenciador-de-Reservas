@@ -1,0 +1,236 @@
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\GerenciamentoHotel.dll.config
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\GerenciamentoHotel.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\GerenciamentoHotel.pdb
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Antlr3.Runtime.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\EntityFramework.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\EntityFramework.SqlServer.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.Core.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.Owin.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Host.SystemWeb.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Cookies.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Facebook.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Google.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.OAuth.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Twitter.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Web.Infrastructure.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\MySql.Data.Entity.EF6.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Newtonsoft.Json.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Owin.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Helpers.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Mvc.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Optimization.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Razor.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.Deployment.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.Razor.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\WebGrease.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Helpers.xml
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Mvc.xml
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Optimization.xml
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Razor.xml
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.xml
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.Deployment.xml
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.Razor.xml
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Antlr3.Runtime.pdb
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Newtonsoft.Json.xml
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\EntityFramework.xml
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\EntityFramework.SqlServer.xml
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.Core.xml
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.Owin.xml
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.xml
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Host.SystemWeb.xml
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.xml
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Facebook.xml
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Cookies.xml
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.OAuth.xml
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Google.xml
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Twitter.xml
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\obj\Debug\GerenciamentoHotel.csprojResolveAssemblyReference.cache
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\obj\Debug\GerenciamentoHotel.dll
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\obj\Debug\GerenciamentoHotel.pdb
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.ReportViewer.WebForms.DLL
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\obj\Debug\RdlCompile.cache
+H:\Bibliotecas\Documents\Documents\Filipe\Trabalhos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\obj\Debug\RdlCompile.compiled
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\GerenciamentoHotel.dll.config
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\GerenciamentoHotel.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\GerenciamentoHotel.pdb
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Antlr3.Runtime.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\EntityFramework.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\EntityFramework.SqlServer.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.ReportViewer.WebForms.DLL
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\MySql.Data.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\MySql.Data.Entity.EF6.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\MySql.Web.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Newtonsoft.Json.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Owin.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Helpers.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Mvc.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Optimization.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Razor.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.Razor.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\WebGrease.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Helpers.xml
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Mvc.xml
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Optimization.xml
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Razor.xml
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.xml
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.Razor.xml
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Antlr3.Runtime.pdb
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Newtonsoft.Json.xml
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\EntityFramework.xml
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\EntityFramework.SqlServer.xml
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.xml
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.xml
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\obj\Debug\GerenciamentoHotel.csprojResolveAssemblyReference.cache
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\obj\Debug\GerenciamentoHotel.dll
+C:\Users\Locirrs\Documents\Desktop\Sistema_Gerenciamento_Hotel1\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\obj\Debug\GerenciamentoHotel.pdb
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\GerenciamentoHotel.dll.config
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\GerenciamentoHotel.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\GerenciamentoHotel.pdb
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Antlr3.Runtime.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\EntityFramework.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\EntityFramework.SqlServer.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.ReportViewer.WebForms.DLL
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\MySql.Data.Entity.EF6.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Newtonsoft.Json.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Owin.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Helpers.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Mvc.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Optimization.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Razor.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.Deployment.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.Razor.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\WebGrease.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Helpers.xml
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Mvc.xml
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Optimization.xml
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Razor.xml
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.xml
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.Deployment.xml
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.Razor.xml
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Antlr3.Runtime.pdb
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Newtonsoft.Json.xml
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\EntityFramework.xml
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\EntityFramework.SqlServer.xml
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.xml
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.xml
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\obj\Debug\GerenciamentoHotel.csprojResolveAssemblyReference.cache
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\obj\Debug\RdlCompile.cache
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\obj\Debug\RdlCompile.compiled
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\obj\Debug\GerenciamentoHotel.dll
+C:\Users\marcio\Documents\Sistema_Gerenciamento_Hotel (1)\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\obj\Debug\GerenciamentoHotel.pdb
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\GerenciamentoHotel.dll.config
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\GerenciamentoHotel.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\GerenciamentoHotel.pdb
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Antlr3.Runtime.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\EntityFramework.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\EntityFramework.SqlServer.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.ReportViewer.WebForms.DLL
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\MySql.Data.Entity.EF6.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Newtonsoft.Json.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Owin.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Helpers.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Mvc.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Optimization.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Razor.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.Deployment.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.Razor.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\WebGrease.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Helpers.xml
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Mvc.xml
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Optimization.xml
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.Razor.xml
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.xml
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.Deployment.xml
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\System.Web.WebPages.Razor.xml
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Antlr3.Runtime.pdb
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Newtonsoft.Json.xml
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\EntityFramework.xml
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\EntityFramework.SqlServer.xml
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.xml
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.xml
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\obj\Debug\GerenciamentoHotel.csprojResolveAssemblyReference.cache
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\obj\Debug\RdlCompile.cache
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\obj\Debug\RdlCompile.compiled
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\obj\Debug\GerenciamentoHotel.dll
+C:\Users\marcio\Dropbox\TempProjetos\Sistema_Gerenciamento_Hotel\Codigo_Fonte\GerenciamentoHotel\GerenciamentoHotel\obj\Debug\GerenciamentoHotel.pdb

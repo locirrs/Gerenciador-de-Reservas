@@ -1,0 +1,69 @@
+﻿@model IEnumerable<GerenciamentoHotel.Models.tb_acomodacao>
+
+@{
+    ViewBag.Title = "Lista de Acomodação";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista de Acomodação</h2>
+
+<p>
+    @Html.ActionLink("Criar Nova Acomodação", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.preco_diaria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numeracao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.qtd_pessoas_adultas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.qtd_criancas)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.descricao)
+        </td>
+        <td>
+            @if (item.tipo.Value == 1)
+            { @Html.Label("Luxo", new { @style = "font-weight:normal" });
+            }
+            else
+            { @Html.Label("Simples", new { @style = "font-weight:normal" });
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.preco_diaria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numeracao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.qtd_pessoas_adultas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.qtd_criancas)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.codigo }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.codigo }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.codigo })
+        </td>
+    </tr>
+}
+
+</table>

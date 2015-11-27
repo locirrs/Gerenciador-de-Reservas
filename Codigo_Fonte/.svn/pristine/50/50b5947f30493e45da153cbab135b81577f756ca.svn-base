@@ -1,0 +1,67 @@
+﻿@model GerenciamentoHotel.Models.tb_reserva
+
+@{
+    ViewBag.Title = "Detalhes da Reserva";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalhes da Reserva</h2>
+
+<div>
+    <h4>Reserva</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.data_entrada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_entrada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_saida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_saida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.qtd_adultos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.qtd_adultos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.qtd_criancas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.qtd_criancas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_acomodacao.descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_acomodacao.descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_hospede.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_hospede.nome)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.codigo }) |
+    @Html.ActionLink("Voltar para Lista", "Index")
+</p>

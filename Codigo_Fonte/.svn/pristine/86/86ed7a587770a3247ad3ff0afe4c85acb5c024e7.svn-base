@@ -1,0 +1,82 @@
+﻿@model GerenciamentoHotel.Models.tb_funcionario
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<h2>@ViewBag.Title.</h2>
+<div class="row">
+    <div class="col-md-8">
+        <section id="loginForm">
+            @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <h4>Faça seu login e senha no sistema</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.Label("Nome", new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.nome, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.nome, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.senha, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.senha, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.senha, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Log in" class="btn btn-default" />
+                    </div>
+                </div>
+
+            }
+        </section>
+    </div>
+    <div class="col-md-4">
+        <section id="socialLoginForm">
+
+        </section>
+    </div>
+</div>
+@if (ViewBag.UserFail != null)
+{
+    <script type="text/javascript">
+        @{
+            if (TempData["user-fail"] != null)
+            {
+                @(TempData["user-fail"] = null)
+                <text>alert("Login", "Usuário ou senha inválidos!");</text>
+            }
+
+            if (TempData["user-bloqueado"] != null)
+            {
+                @(TempData["user-bloqueado"] = null)
+                <text>alert("Login", "Usuário Bloqueado!");</text>
+            }
+
+            if (TempData["user-desativado"] != null)
+            {
+                @(TempData["user-desativado"] = null)
+                <text>alert("Login", "Usuário Afastado!");</text>
+            }
+
+            if (TempData["grupo-desativado"] != null)
+            {
+                @(TempData["grupo-desativado"] = null)
+                <text>alert("Login", "Grupo de Usuário Desativado!");</text>
+            }
+        }
+
+                $("#login").focus();
+
+    </script>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,87 @@
+﻿@model GerenciamentoHotel.Models.tb_hospede
+
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Views/Shared/_LayoutNovo.cshtml";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Hóspede</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.endereco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.endereco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.documento_identificacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.documento_identificacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo_documento_identificacao)
+        </dt>
+
+        <dd>
+            @switch (Model.tipo_documento_identificacao)
+            {
+                case 0:
+                    <span>Nenhum</span>
+                    break;
+                case 1:
+                <span>CPF</span>
+                    break;
+                case 2:
+                <span>RG</span>
+                    break;
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_nascimento)
+        </dt>
+
+        <dd>
+            @string.Format("{0:dd/MM/yyyy}",Model.data_nascimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nome_pai_mae)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome_pai_mae)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="@Url.Action("Edit", "Hospede", new { id = Model.codigo })" title="Editar"><span class="btn btn-default fa fa-pencil">Editar</span></a>&nbsp;
+    <a href="@Url.Action("Index", "Hospede")" title="Voltar"><span class="btn btn-default fa fa-arrow-left">Voltar</span></a>
+    <a href="@Url.Action("Index", "Home")" title="Voltar"><span class="btn btn-default fa fa-home">Ir para Home</span></a>
+</p>

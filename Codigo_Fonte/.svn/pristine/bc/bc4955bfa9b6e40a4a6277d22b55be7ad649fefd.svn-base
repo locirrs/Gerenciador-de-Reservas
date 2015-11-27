@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3c5f413ea27e4a18a8f3f04532edff15" Name="Diagram1">
+        <EntityTypeShape EntityType="gerenciamento_hotelModel.tb_acomodacao" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="gerenciamento_hotelModel.tb_checkin" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="gerenciamento_hotelModel.tb_checkout" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="gerenciamento_hotelModel.tb_consumo" Width="1.5" PointX="8.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="gerenciamento_hotelModel.tb_funcionario" Width="1.5" PointX="0.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="gerenciamento_hotelModel.tb_hospede" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="gerenciamento_hotelModel.tb_hospede_checkin" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="gerenciamento_hotelModel.tb_itens_consumo" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="gerenciamento_hotelModel.tb_reserva" Width="1.5" PointX="6" PointY="7.25" IsExpanded="true" />
+        <AssociationConnector Association="gerenciamento_hotelModel.fk_tb_checkin_tb_acomodacao" ManuallyRouted="false" />
+        <AssociationConnector Association="gerenciamento_hotelModel.fk_tb_reserva_tb_acomodacao" ManuallyRouted="false" />
+        <AssociationConnector Association="gerenciamento_hotelModel.fk_tb_checkin_tb_funcionario" ManuallyRouted="false" />
+        <AssociationConnector Association="gerenciamento_hotelModel.fk_tb_checkin_tb_hospede" ManuallyRouted="false" />
+        <AssociationConnector Association="gerenciamento_hotelModel.fk_tb_checkout_tb_checkin" ManuallyRouted="false" />
+        <AssociationConnector Association="gerenciamento_hotelModel.fk_tb_consumo_tb_checkin" ManuallyRouted="false" />
+        <AssociationConnector Association="gerenciamento_hotelModel.fk_tb_hospede_checkin_tb_checkin" ManuallyRouted="false" />
+        <AssociationConnector Association="gerenciamento_hotelModel.fk_tb_consumo_tb_item_consumo" ManuallyRouted="false" />
+        <AssociationConnector Association="gerenciamento_hotelModel.fk_tb_hospede_checkin_tb_hospede" ManuallyRouted="false" />
+        <AssociationConnector Association="gerenciamento_hotelModel.fk_tb_reserva_tb_hospede" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

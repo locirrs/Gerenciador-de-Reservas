@@ -1,0 +1,51 @@
+﻿
+@model IEnumerable<GerenciamentoHotel.Models.tb_hospede_checkin>
+
+@{
+    ViewBag.Title = "Hóspede de Checkin";
+    Layout = "~/Views/Shared/_LayoutNovo.cshtml";
+}
+
+<h2>Hóspede de Checkin</h2>
+
+<p>
+    <a href="@Url.Action("Create", "HospedeCheckin")" title="Novo"><span class="btn btn-default fa fa-plus-circle">Novo</span></a>
+</p>
+<br/>
+@if (Model.ToList().Count > 0)
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tb_checkin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tb_hospede.nome)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tb_checkin.tb_hospede.nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tb_hospede.nome)
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit", "HospedeCheckin", new { id = item.codigo })" title="Editar"><i class="fa fa-pencil-square-o"></i></a>
+                    <a href="@Url.Action("Details", "HospedeCheckin", new { id = item.codigo })" title="Detalhes"><i class="fa fa-ellipsis-h"></i></a>
+                    <a href="@Url.Action("Delete", "HospedeCheckin", new { id = item.codigo })" title="Excluir"><i class="fa fa-eraser"></i></a>
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+else
+{
+    <div class="alert alert-info"><strong>Aviso:</strong>Nenhuma informação encontrado!</div>
+}
+

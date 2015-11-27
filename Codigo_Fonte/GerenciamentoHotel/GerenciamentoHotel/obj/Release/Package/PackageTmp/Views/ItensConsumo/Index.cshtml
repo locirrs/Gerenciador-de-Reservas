@@ -1,0 +1,50 @@
+﻿@model IEnumerable<GerenciamentoHotel.Models.tb_itens_consumo>
+
+@{
+    ViewBag.Title = "Lista de Itens de Consumo";
+    Layout = "~/Views/Shared/_LayoutNovo.cshtml";
+}
+
+<h2>Lista de Itens de Consumo</h2>
+
+<p>
+    <a href="@Url.Action("Create", "ItensConsumo")" title="Editar"><span class="btn btn-default fa fa-plus-circle">Novo Item de Consumo</span></a>
+    <a href="@Url.Action("Index", "Home")" title="Voltar"><span class="btn btn-default fa fa-home">Ir para Home</span></a>
+</p>
+<br/>
+@if (Model.ToList().Count > 0) {
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.descricao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.valor)
+                </th>
+                <th style="width:10%;"></th>
+            </tr>
+
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.descricao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.valor)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", "ItensConsumo", new { id = item.codigo })" title="Editar"><i class="fa fa-pencil-square-o"></i></a>
+                        <a href="@Url.Action("Details", "ItensConsumo", new { id = item.codigo })" title="Detalhes"><i class="fa fa-ellipsis-h"></i></a>
+                        <a href="@Url.Action("Delete", "ItensConsumo", new { id = item.codigo })" title="Excluir"><i class="fa fa-eraser"></i></a>
+                    </td>
+                </tr>
+}
+
+        </table>
+        </div>
+        }
+        else
+        {
+        <div class="alert alert-info"><strong>Aviso:</strong>Nenhum item encontrado!</div>
+        }

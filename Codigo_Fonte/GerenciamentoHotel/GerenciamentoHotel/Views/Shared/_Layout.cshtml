@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html>
+
+@{
+    GerenciamentoHotel.Models.UserAuthenticated usuarioLogado = (GerenciamentoHotel.Models.UserAuthenticated)HttpContext.Current.Session["USER_SESSION"];
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/Content/plugin/css/bootstrap.min.css")
+    @Styles.Render("~/Content/plugin/css/font-awesome.min.css")
+    @Styles.Render("~/Content/plugin/css/templatemo_misc.css")
+    @Styles.Render("~/Content/plugin/css/easy-responsive-tabs.css")
+    @Styles.Render("~/Content/plugin/css/templatemo_style.css")
+    
+    
+    @Scripts.Render("~/Content/plugin/js/jquery.lightbox.js")
+    @Scripts.Render("~/Content/plugin/js/jquery.validate.min.js")
+
+    @Scripts.Render("~/Content/plugin/js/templatemo_custom.js")
+    @Scripts.Render("~/Content/plugin/js/easyResponsiveTabs.js")
+    
+
+    <script type="text/javascript">
+    var GLOBAL = GLOBAL || {};
+    GLOBAL['location'] = '@("http://" + System.Web.HttpContext.Current.Request.Url.Host + (string.IsNullOrEmpty(System.Web.HttpContext.Current.Request.ApplicationPath) ? "" : System.Web.HttpContext.Current.Request.ApplicationPath + "/"))';
+    </script>
+
+
+
+
+    
+</head>
+<body>
+
+    <div id="menu-container" class="main_menu">
+        <!-- homepage start -->
+        <div class="content homepage" id="menu-1">
+    <div class="container">
+        <div class="col-md-1 col-sm-6 templatemo_leftgap">
+            <div class="templatemo_mainservice templatemo_botgap">
+                <div class="templatemo_link">@Html.UserActionLink("Home", "Index", "Home",new{@class="show-2 templatemo_page2"})</div>
+
+            </div>
+            <div class="templatemo_mainimg"><img src=@Url.Content("~/Content/plugin/images/templatemo_home1.jpg") alt="home img 01"></div>
+        </div>
+        <div class="col-md-1 col-sm-6 templatemo_leftgap">
+            <div class="templatemo_mainimg templatemo_botgap templatemo_portfotopgap"><img src=@Url.Content("~/Content/plugin/images/templatemo_home2.jpg") alt="home img 02"></div>
+            <div class="templatemo_mainportfolio">
+                <div class="templatemo_link">@Html.UserActionLink("Hospede", "Index", "Hospede", new { @class = "show-2 templatemo_page2" })</div>
+
+            </div>
+        </div>
+        <div class="col-md-1 col-sm-6 templatemo_leftgap">
+            <div class="templatemo_maincontact">
+                <div class="templatemo_link">@Html.UserActionLink("Reserva", "Index", "Reserva", new { @class = "show-2 templatemo_page2" })</div>
+            </div>
+
+            <div class="templatemo_mainimg"><img src=@Url.Content("~/Content/plugin/images/templatemo_home3.jpg") alt="home img 03"></div>
+
+
+        </div>
+        @{if (usuarioLogado.UsuarioLogado.tipo_usuario == 1) { 
+            <div class="col-md-1 col-sm-6 templatemo_leftgap">
+                <div class="templatemo_mainimg templatemo_botgap templatemo_topgap">
+                    <img src=@Url.Content("~/Content/plugin/images/templatemo_home4.jpg") alt="home img 04">
+                </div>
+                <div class="templatemo_mainabout templatemo_botgap">
+                    <div class="templatemo_link">@Html.UserActionLink("Funcionário", "Index", "Funcionario", new { @class = "show-2 templatemo_page2" })</div>
+                </div>
+                <div class="templatemo_maincontact">
+                    <div class="templatemo_link">@Html.UserActionLink("Acomodação", "Index", "Acomodacao", new { @class = "show-2 templatemo_page2" })</div>
+                </div>
+            </div>
+        
+            <div class="col-md-1 col-sm-6 templatemo_leftgap">
+                <div class="templatemo_mainimg templatemo_botgap templatemo_topgap">
+                    <img src=@Url.Content("~/Content/plugin/images/templatemo_home4.jpg") alt="home img 04">
+                </div>
+                <div class="templatemo_mainabout templatemo_botgap">
+                    <div class="templatemo_link">@Html.UserActionLink("Acomodação", "Index", "Acomodacao", new { @class = "show-2 templatemo_page2" })</div>
+                </div>
+
+                <div class="templatemo_maintesti templatemo_botgap templatemo_topgap">
+                    <div class="templatemo_link">@Html.UserActionLink("I. Consumo", "Index", "ItensConsumo", new { @class = "show-2 templatemo_page2" })</div>
+                </div>
+
+            </div>
+        
+            <div class="col-md-1 col-sm-6 templatemo_leftgap">
+                <div class="templatemo_mainimg templatemo_botgap templatemo_topgap">
+                    <img src=@Url.Content("~/Content/plugin/images/templatemo_home4.jpg") alt="home img 04">
+                </div>
+                <div class="templatemo_mainabout templatemo_botgap">
+                    <div class="templatemo_link">@Html.UserActionLink("Acomodação", "Index", "Acomodacao", new { @class = "show-2 templatemo_page2" })</div>
+                </div>
+                <div class="templatemo_maincontact">
+                    <div class="templatemo_link">@Html.UserActionLink("Reserva", "Index", "Reserva", new { @class = "show-2 templatemo_page2" })</div>
+                </div>
+            </div>
+        
+            <div class="col-md-1 col-sm-6 templatemo_leftgap">
+                <div class="templatemo_mainimg templatemo_botgap templatemo_topgap">
+                    <img src=@Url.Content("~/Content/plugin/images/templatemo_home4.jpg") alt="home img 04">
+                </div>
+                <div class="templatemo_mainabout templatemo_botgap">
+                    <div class="templatemo_link">@Html.UserActionLink("Checkin", "Index", "Checkin", new { @class = "show-2 templatemo_page2" })</div>
+                </div>
+                <div class="templatemo_maincontact">
+                    <div class="templatemo_link">@Html.UserActionLink("H. de Checkin", "Index", "HospedeCheckin", new { @class = "show-2 templatemo_page2" })</div>
+                </div>
+            </div>
+        
+            <div class="col-md-1 col-sm-6 templatemo_leftgap">
+                <div class="templatemo_mainimg templatemo_botgap templatemo_topgap">
+                    <img src=@Url.Content("~/Content/plugin/images/templatemo_home4.jpg") alt="home img 04">
+                </div>
+                <div class="templatemo_mainabout templatemo_botgap">
+                    <div class="templatemo_link">@Html.UserActionLink("Consumo", "Index", "Consumo", new { @class = "show-2 templatemo_page2" })</div>
+                </div>
+                <div class="templatemo_maincontact">
+                    <div class="templatemo_link">@Html.UserActionLink("Checkout", "Index", "Checkout", new { @class = "show-2 templatemo_page2" })</div>
+                </div>
+            </div>
+        
+            <div class="col-md-1 col-sm-6 templatemo_leftgap">
+                <div class="templatemo_mainimg templatemo_botgap templatemo_topgap">
+                    <img src=@Url.Content("~/Content/plugin/images/templatemo_home4.jpg") alt="home img 04">
+                </div>
+                <div class="templatemo_mainabout templatemo_botgap">
+                    <div class="templatemo_link">@Html.UserActionLink("Lista Hósp.", "RelatorioListaHospede", "Checkin", new { @class = "show-2 templatemo_page2" })</div>
+                </div>
+                <div class="templatemo_maincontact">
+                    <div class="templatemo_link">@Html.UserActionLink("Logout", "LogOut", "Account", new { @class = "show-2 templatemo_page2" })</div>
+                </div>
+            </div>
+          }
+          else
+          {
+            <div class="col-md-1 col-sm-6 templatemo_leftgap">
+                <div class="templatemo_maincontact">
+                    <div class="templatemo_link">@Html.UserActionLink("Logout", "LogOut", "Account", new { @class = "show-2 templatemo_page2" })</div>
+                </div>
+
+                <div class="templatemo_mainimg"><img src=@Url.Content("~/Content/plugin/images/templatemo_home3.jpg") alt="home img 03"></div>
+
+
+            </div>
+          }
+}
+          
+    </div>
+        </div>
+            @*<div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        @Html.ActionLink("Gerenciamento de Hotel", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>@Html.UserActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.UserActionLink("Hospede", "Index", "Hospede")</li>
+                            <li>@Html.UserActionLink("Itens de Consumo", "Index", "ItensConsumo")</li>
+                            <li>@Html.UserActionLink("Funcionário", "Index", "Funcionario")</li>
+                            <li>@Html.UserActionLink("Acomodação", "Index", "Acomodacao")</li>
+                            <li>@Html.UserActionLink("Reserva", "Index", "Reserva")</li>
+                            <li>@Html.UserActionLink("Checkin", "Index", "Checkin")</li>
+                            <li>@Html.UserActionLink("Hóspede de Checkin", "Index", "HospedeCheckin")</li>
+                            <li>@Html.UserActionLink("Consumo", "Index", "Consumo")</li>
+                            <li>@Html.UserActionLink("Checkout", "Index", "Checkout")</li>
+                            <li>@Html.UserActionLink("Lista de Hóspede", "RelatorioListaHospede", "Checkin")</li>
+                            <li>@Html.ActionLink("Logout", "LogOut", "Account")</li>
+
+                        </ul>
+                        @Html.Partial("_LoginPartial")
+                    </div>
+                </div>
+            </div>*@
+        <div class="body-content corpo" style="width:50%; margin-left:25%;color:white;fadd">
+            @RenderBody()
+  
+            <hr />
+
+        </div>
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/jquery-ui")
+
+            @RenderSection("scripts", required: false)
+
+
+    <script>
+        jQuery(function ($) {
+                    
+        });
+    </script>
+        </div>
+</body>
+</html>

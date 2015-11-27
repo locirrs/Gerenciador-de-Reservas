@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="gerenciamento_hotelModelStoreContainer" CdmEntityContainer="gerenciamento_hotelEntities">
+    <EntitySetMapping Name="tb_acomodacao">
+      <EntityTypeMapping TypeName="gerenciamento_hotelModel.tb_acomodacao">
+        <MappingFragment StoreEntitySet="tb_acomodacao">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="preco_diaria" ColumnName="preco_diaria" />
+          <ScalarProperty Name="numeracao" ColumnName="numeracao" />
+          <ScalarProperty Name="qtd_pessoas_adultas" ColumnName="qtd_pessoas_adultas" />
+          <ScalarProperty Name="qtd_criancas" ColumnName="qtd_criancas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_checkin">
+      <EntityTypeMapping TypeName="gerenciamento_hotelModel.tb_checkin">
+        <MappingFragment StoreEntitySet="tb_checkin">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="data_entrada" ColumnName="data_entrada" />
+          <ScalarProperty Name="hora_entrada" ColumnName="hora_entrada" />
+          <ScalarProperty Name="data_saida" ColumnName="data_saida" />
+          <ScalarProperty Name="hora_saida" ColumnName="hora_saida" />
+          <ScalarProperty Name="codigo_hospede" ColumnName="codigo_hospede" />
+          <ScalarProperty Name="codigo_acomodacao" ColumnName="codigo_acomodacao" />
+          <ScalarProperty Name="valor_diaria" ColumnName="valor_diaria" />
+          <ScalarProperty Name="codigo_funcionario" ColumnName="codigo_funcionario" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_checkout">
+      <EntityTypeMapping TypeName="gerenciamento_hotelModel.tb_checkout">
+        <MappingFragment StoreEntitySet="tb_checkout">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="codigo_checkin" ColumnName="codigo_checkin" />
+          <ScalarProperty Name="data_saida" ColumnName="data_saida" />
+          <ScalarProperty Name="hora_saida" ColumnName="hora_saida" />
+          <ScalarProperty Name="numero_diarias" ColumnName="numero_diarias" />
+          <ScalarProperty Name="valor_diária" ColumnName="valor_diária" />
+          <ScalarProperty Name="valor_telefonemas" ColumnName="valor_telefonemas" />
+          <ScalarProperty Name="valor_consumo" ColumnName="valor_consumo" />
+          <ScalarProperty Name="valor_total" ColumnName="valor_total" />
+          <ScalarProperty Name="forma_pagamento" ColumnName="forma_pagamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_consumo">
+      <EntityTypeMapping TypeName="gerenciamento_hotelModel.tb_consumo">
+        <MappingFragment StoreEntitySet="tb_consumo">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="data_consumo" ColumnName="data_consumo" />
+          <ScalarProperty Name="codigo_checkin" ColumnName="codigo_checkin" />
+          <ScalarProperty Name="codigo_item_consumo" ColumnName="codigo_item_consumo" />
+          <ScalarProperty Name="quantidade" ColumnName="quantidade" />
+          <ScalarProperty Name="valor_unitario" ColumnName="valor_unitario" />
+          <ScalarProperty Name="valor_final" ColumnName="valor_final" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_funcionario">
+      <EntityTypeMapping TypeName="gerenciamento_hotelModel.tb_funcionario">
+        <MappingFragment StoreEntitySet="tb_funcionario">
+          <ScalarProperty Name="senha" ColumnName="senha" />
+          <ScalarProperty Name="tipo_usuario" ColumnName="tipo_usuario" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="endereco" ColumnName="endereco" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="documento_identificacao" ColumnName="documento_identificacao" />
+          <ScalarProperty Name="tipo_documento_identificacao" ColumnName="tipo_documento_identificacao" />
+          <ScalarProperty Name="data_nascimento" ColumnName="data_nascimento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_hospede">
+      <EntityTypeMapping TypeName="gerenciamento_hotelModel.tb_hospede">
+        <MappingFragment StoreEntitySet="tb_hospede">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="endereco" ColumnName="endereco" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="documento_identificacao" ColumnName="documento_identificacao" />
+          <ScalarProperty Name="tipo_documento_identificacao" ColumnName="tipo_documento_identificacao" />
+          <ScalarProperty Name="data_nascimento" ColumnName="data_nascimento" />
+          <ScalarProperty Name="nome_pai_mae" ColumnName="nome_pai_mae" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_hospede_checkin">
+      <EntityTypeMapping TypeName="gerenciamento_hotelModel.tb_hospede_checkin">
+        <MappingFragment StoreEntitySet="tb_hospede_checkin">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="codigo_checkin" ColumnName="codigo_checkin" />
+          <ScalarProperty Name="codigo_hospede" ColumnName="codigo_hospede" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_itens_consumo">
+      <EntityTypeMapping TypeName="gerenciamento_hotelModel.tb_itens_consumo">
+        <MappingFragment StoreEntitySet="tb_itens_consumo">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_reserva">
+      <EntityTypeMapping TypeName="gerenciamento_hotelModel.tb_reserva">
+        <MappingFragment StoreEntitySet="tb_reserva">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="codigo_hospede" ColumnName="codigo_hospede" />
+          <ScalarProperty Name="data_entrada" ColumnName="data_entrada" />
+          <ScalarProperty Name="data_saida" ColumnName="data_saida" />
+          <ScalarProperty Name="codigo_acomodacao" ColumnName="codigo_acomodacao" />
+          <ScalarProperty Name="qtd_adultos" ColumnName="qtd_adultos" />
+          <ScalarProperty Name="qtd_criancas" ColumnName="qtd_criancas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

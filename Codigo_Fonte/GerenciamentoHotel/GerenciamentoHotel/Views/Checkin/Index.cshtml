@@ -1,0 +1,128 @@
+﻿@model IEnumerable<GerenciamentoHotel.Models.tb_checkin>
+
+@{
+    ViewBag.Title = "Checkin";
+    Layout = "~/Views/Shared/_LayoutNovo.cshtml";
+}
+
+<h2>Check-in</h2>
+
+@if (TempData["error"] != null)
+{
+    <div class="alert alert-warning">
+        <p>
+            @TempData["error"]
+        </p>
+    </div>
+}
+
+<p>   
+    <a href="@Url.Action("Create", "Checkin")" title="Novo"><span class="btn btn-default fa fa-plus-circle">Novo Checkin</span></a>
+    <a href="@Url.Action("Index", "Home")" title="Voltar"><span class="btn btn-default fa fa-home">Ir para Home</span></a>
+</p>
+<br/>
+@if (Model.ToList().Count > 0) {
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.data_entrada)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.hora_entrada)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.data_saida)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.hora_saida)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.valor_diaria)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.qtd_adultos)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.qtd_criancas)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.status)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.tb_acomodacao.descricao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.tb_funcionario.nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.tb_hospede.nome)
+                </th>
+                <th style="width:10%;"></th>
+            </tr>
+
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @string.Format("{0:dd/MM/yyyy}",item.data_entrada)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.hora_entrada)
+                    </td>
+                    <td>
+                        @string.Format("{0:dd/MM/yyyy}", item.data_saida)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.hora_saida)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.valor_diaria)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.qtd_adultos)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.qtd_criancas)
+                    </td>
+                    <td>
+                        @switch (item.status)
+            {
+                case 0:
+                                <span>Nenhuma</span>
+                    break;
+                case 1:
+                <span>Em andamento</span>
+                    break;
+                case 2:
+                <span>Finalizada</span>
+                    break;
+                case 3:
+                <span>Não realizada</span>
+                    break;
+            }
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tb_acomodacao.descricao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tb_funcionario.nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tb_hospede.nome)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Checkin", new { id = item.codigo })" title="Editar"><i class="fa fa-pencil-square-o"></i></a>
+                        <a href="@Url.Action("Details", "Checkin", new { id = item.codigo })" title="Detalhes"><i class="fa fa-ellipsis-h"></i></a>
+                        <a href="@Url.Action("Delete", "Checkin", new { id = item.codigo })" title="Excluir"><i class="fa fa-eraser"></i></a>
+                    </td>
+                </tr>
+}
+
+        </table>
+        </div>
+        }
+        else
+        {
+        <div class="alert alert-info"><strong>Aviso:</strong>Nenhum check-in encontrado!</div>
+        }

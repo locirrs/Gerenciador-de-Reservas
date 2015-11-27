@@ -1,0 +1,132 @@
+﻿@model GerenciamentoHotel.Models.tb_checkin
+
+@{
+    ViewBag.Title = "Deletar Checkin";
+    Layout = "~/Views/Shared/_LayoutNovo.cshtml";
+}
+
+<h2>Deletar Checkin</h2>
+
+<h3>Você tem certeza que deseja deletar o checkin?</h3>
+<div>
+    <h4>Checkin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.data_entrada)
+        </dt>
+
+        <dd>
+            @string.Format("{0:dd/MM/yyyy}", Model.data_entrada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hora_entrada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hora_entrada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_saida)
+        </dt>
+
+        <dd>
+            @string.Format("{0:dd/MM/yyyy}", Model.data_saida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hora_saida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hora_saida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valor_diaria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valor_diaria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.qtd_adultos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.qtd_adultos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.qtd_criancas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.qtd_criancas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @switch (Model.status)
+            {
+                case 0:
+                    <span>Nenhuma</span>
+                    break;
+                case 1:
+                <span>Em andamento</span>
+                    break;
+                case 2:
+                <span>Finalizada</span>
+                    break;
+                case 3:
+                <span>Não realizada</span>
+                    break;
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_acomodacao.descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_acomodacao.descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_funcionario.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_funcionario.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_hospede.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_hospede.nome)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <button type="submit" class="btn btn-default">
+            <span class="fa fa-eraser"></span>Excluir
+        </button>
+        &nbsp;
+        <a href="@Url.Action("Index", "Checkin")" title="Voltar"><span class="btn btn-default fa fa-arrow-left">Voltar</span></a>
+        <a href="@Url.Action("Index", "Home")" title="Voltar"><span class="btn btn-default fa fa-home">Ir para Home</span></a>
+    </div>
+    <br />
+    }
+</div>

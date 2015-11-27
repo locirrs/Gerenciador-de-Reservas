@@ -1,0 +1,94 @@
+﻿@model IEnumerable<GerenciamentoHotel.Models.tb_funcionario>
+
+@{
+    ViewBag.Title = "Lista de Funcionário";
+    Layout = "~/Views/Shared/_LayoutNovo.cshtml";
+}
+
+<h2>Lista de Funcionário</h2>
+
+<p>
+    <a href="@Url.Action("Create", "Funcionario")" title="Editar"><span class="btn btn-default fa fa-plus-circle">Novo Funcionário</span></a>
+    <a href="@Url.Action("Index", "Home")" title="Voltar"><span class="btn btn-default fa fa-home">Ir para Home</span></a>
+</p>
+<br/>
+@if (Model.ToList().Count > 0)
+{
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.endereco)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.telefone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.documento_identificacao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.tipo_documento_identificacao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.data_nascimento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.tipo_usuario)
+                </th>
+
+                <th style="width:10%;"></th>
+            </tr>
+
+            @foreach (var item in Model)
+        {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.endereco)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.telefone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.documento_identificacao)
+                    </td>
+                    <td>
+                        @if (item.tipo_documento_identificacao.Value == 1)
+                    { @Html.Label("CPF", new { @style = "font-weight:normal" });
+                    }
+                    else
+                    { @Html.Label("RG", new { @style = "font-weight:normal" });
+                    }
+                    </td>
+                    <td>
+                        @string.Format("{0:dd/MM/yyyy}",item.data_nascimento)
+                    </td>
+                    <td>
+                        @if (item.tipo_usuario.Value == 1)
+                    { @Html.Label("Administrador", new { @style = "font-weight:normal" });
+                    }
+                    else
+                    { @Html.Label("Funcionário", new { @style = "font-weight:normal" });
+                    }
+                    </td>
+
+                    <td>
+                        <a href="@Url.Action("Edit", "Funcionario", new { id = item.codigo })" title="Editar"><i class="fa fa-pencil-square-o"></i></a>
+                        <a href="@Url.Action("Details", "Funcionario", new { id = item.codigo })" title="Detalhes"><i class="fa fa-ellipsis-h"></i></a>
+                        <a href="@Url.Action("Delete", "Funcionario", new { id = item.codigo })" title="Excluir"><i class="fa fa-eraser"></i></a>
+                    </td>
+                </tr>
+        }
+
+        </table>
+</div>
+        }
+        else
+        {
+        <div class="alert alert-info"><strong>Aviso:</strong>Nenhum funcionário encontrado!</div>
+        }
